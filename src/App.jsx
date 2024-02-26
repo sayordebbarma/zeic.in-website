@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import zeicLogo from './assets/ZEIC_logo_coloredVersion.svg'
-import './App.css'
+import React from 'react'
+import HomePage from './pages/home/HomePage.jsx';
+import ProductsPage from './pages/products/ProductsPage.jsx';
+import ContactPage from './pages/contact/ContactPage.jsx';
 
-function App() {
+function App(){
   return (
-    <>
-      <div>
-        <img src={zeicLogo} className="logo" alt="Vite logo" />
-      </div>
-      <h1>zeic.in website</h1>
-    </>
+  <>
+  <HomePage/>
+  <ProductsPage/>
+  <ContactPage />
+  </>
   )
 }
 
