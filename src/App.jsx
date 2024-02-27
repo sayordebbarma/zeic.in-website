@@ -10,8 +10,8 @@ function App(){
   <>
   <ContactHeader />
   <Navbar />
-  {/* <HomePage/>
-  <ProductsPage/>
+  <HomePage/>
+  {/* <ProductsPage/>
   <ContactPage /> */}
   </>
   )
