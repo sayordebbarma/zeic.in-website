@@ -4,12 +4,12 @@ import './HomePage.css'
 
 function HomePage(){
   return (
-  <div className='w-full relative'>
+  <div className='w-full relative h-screen'>
     <img className='w-full h-full object-cover'src={homebg} alt="" />
     <div className='absolute w-full h-full top-0 left-0 bg-gray-900/50'></div>
-    <div className='absolute top-0 w-full h-full flex flex-col justify-center text-center text-white p-4'>
+    <div className='absolute top-1/2 transform -translate-y-1/2 w-full text-center text-white'>
       <h1 className='font-extrabold	text-8xl'>ZIP ENGINEERING<br/>&<br/>INNOVATION CENTRE</h1>
-      <p className='text-sm italic font-thin'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
+      <p className='text-sm italic font-thin m-3'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
     </div>
   </div>
   )
