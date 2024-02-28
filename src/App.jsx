@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/home/HomePage.jsx';
 import ProductsPage from './pages/products/ProductsPage.jsx';
 import ContactPage from './pages/contact/ContactPage.jsx';
@@ -7,13 +8,11 @@ import ContactHeader from './components/contactHeader/ContactHeader';
 
 function App(){
   return (
-  <>
-  <ContactHeader />
-  <Navbar />
-  <HomePage/>
-  {/* <ProductsPage/>
-  <ContactPage /> */}
-  </>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/"  element={<HomePage/>}/>
+  </Routes>
+  </BrowserRouter>
   )
 }
 
