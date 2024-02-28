@@ -1,6 +1,7 @@
 import React from 'react'
 import homebg from '../../assets/images/background/homebg.png'
 import './HomePage.css'
+import HomeAboutUs from '../../components/HomeAboutUs/HomeAboutUs'
 
 function HomePage(){
   return (
@@ -11,6 +12,7 @@ function HomePage(){
       <h1 className='font-extrabold	text-8xl'>ZIP ENGINEERING<br/>&<br/>INNOVATION CENTRE</h1>
       <p className='text-sm italic font-thin m-3'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
     </div>
+    <HomeAboutUs />
   </div>
   )
 }
