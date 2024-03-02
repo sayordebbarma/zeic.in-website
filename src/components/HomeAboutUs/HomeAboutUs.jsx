@@ -1,18 +1,34 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Timeline from '../timeline/timeline';
+
 
 const HomeAboutUs = () => {
   return (
-    <div>
-      <h1 className='text-6xl font-bold text-center m-6'>About Us</h1>
-      <div className='flex'>
-        <img src="" alt="About us img" />
-        <div>
-          <h2>About us</h2> 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet exercitationem neque ea numquam mollitia dolorem inventore enim ratione veniam repellendus! Sapiente, cumque. Minima hic suscipit atque doloremque voluptas quam voluptatum?</p>
+    <div className='container mx-auto p-8'>
+      <h1 className='text-5xl font-bold text-center text-gray-800 mb-8'>About Us</h1>
+      <div className='flex flex-col md:flex-row items-center'>
+        <div className='relative md:w-1/3 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden' style={{ boxShadow: '5px 10px', padding: '0' }}>
+          <img
+            src="src/assets/images/Innovator/Innovator_sample.jpg"
+            alt="The Innovator"
+          />
+        </div>
+        <div className='md:w-2/3 md:ml-8'>
+          <div className='bg-gray-100 p-6 rounded-tr-3xl rounded-bl-3xl shadow-xl'>
+            <h3 className='font-bold mb-4 text-lg'>The Innovator:</h3>
+            <p>
+              Recognized ELC Technician by Asosiasi Hidro Bandung. Recognized ELC Technician by ASEAN Hydropower Competence Centre (HYCOM). Representative for Meghalaya State Basin Development Authority. Represented Gram Vikas of India from Orrisa State, for the Hydro Empowerment Network from South and Southeast Asia in Indonesia. Speaker at Nagaland CSR & Investment Conclave 2022.
+            </p>
+            <Link to='/about-us' className='text-red-600 hover:underline block mt-4'>
+              Learn More
+            </Link>
+          </div>
         </div>
       </div>
+      <Timeline/>
     </div>
-  )
-}
+  );
+};
 
-export default HomeAboutUs
+export default HomeAboutUs;
