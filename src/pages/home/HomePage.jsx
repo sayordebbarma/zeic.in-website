@@ -4,6 +4,7 @@ import './HomePage.css'
 import HomeAboutUs from '../../components/HomeAboutUs/HomeAboutUs'
 import Navbar from '../../components/navbar/Navbar';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
+import Footer from '../../components/footer/Footer';
 
 function HomePage(){
   return (
@@ -18,6 +19,7 @@ function HomePage(){
       <p className='text-sm italic font-thin m-3'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
     </div>
     <HomeAboutUs />
+    <Footer />
   </div></>
   )
 }
