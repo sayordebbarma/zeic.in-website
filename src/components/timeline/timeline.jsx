@@ -10,7 +10,7 @@ const Timeline = () => {
     { year: 2022, title: 'Government of Nagaland - Department of Industries & Commerce - State Best Entrepreneur Award'},
   ];
 
-  const initialDisplayCount = 1;
+  const initialDisplayCount = 2;
   const initialStartIndex = events.findIndex((event) => event.year === 2008);
   const [startIndex, setStartIndex] = useState(initialStartIndex);
   const endIndex = Math.min(startIndex + initialDisplayCount - 1, events.length - 1);
@@ -24,7 +24,7 @@ const Timeline = () => {
   };
 
   return (
-    <div className="timeline-container" style={{ width: '300px', minHeight: '250px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+    <div className="timeline-container flex justify-center" style={{ width: '300px', minHeight: '250px', margin: '0 auto'}}>
       <div className="md:flex md:justify-right md:gap-6 md:border-l-0 md:border-t">
         <button
           className="text-replace md:ml-4 text-4xl relative" 
