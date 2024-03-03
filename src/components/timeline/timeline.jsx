@@ -10,7 +10,7 @@ const Timeline = () => {
     { year: 2022, title: 'Government of Nagaland - Department of Industries & Commerce - State Best Entrepreneur Award'},
   ];
 
-  const initialDisplayCount = 3;
+  const initialDisplayCount = 1;
   const initialStartIndex = events.findIndex((event) => event.year === 2008);
   const [startIndex, setStartIndex] = useState(initialStartIndex);
   const endIndex = Math.min(startIndex + initialDisplayCount - 1, events.length - 1);
@@ -24,32 +24,34 @@ const Timeline = () => {
   };
 
   return (
-    <div className="timeline-container" style={{ width: '1280px', minHeight: '250px' }}>
+    <div className="timeline-container" style={{ width: '300px', minHeight: '250px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
       <div className="md:flex md:justify-right md:gap-6 md:border-l-0 md:border-t">
         <button
-          className="text-replace md:ml-4 text-2xl" 
+          className="text-replace md:ml-4 text-4xl relative" 
+          style={{maxHeight: '150px'}}
           onClick={handlePrev}
           disabled={startIndex === 0}
         >
           {'<'}
         </button>
         <ol className="border-l border-neutral-300 dark:border-neutral-500 md:flex md:justify-center md:gap-6 md:border-l-0 md:border-t">
-          {events.slice(startIndex, endIndex + 1).map((event, index) => (
-            <li key={index} className="mb-4 md:mb-0">
+        {events.slice(startIndex, endIndex + 1).map((event, index) => (
+            <li key={index} className="mb-4 md:mb-0" style={{ flex: `1 0 ${(100 / initialDisplayCount).toFixed(2)}%`, width: '300px'}}>
               <div className="flex items-center md:flex-col md:items-start">
                 <div className="md:-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500 md:-mt-[5px] md:ml-0 md:mr-0"></div>
-                <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-300">
+                <p className="mt-2 text-xl text-neutral-500 dark:text-neutral-300 font-semibold">
                   {event.year}
                 </p>
               </div>
               <div className="ml-4 md:ml-0">
-                <h4 className="mb-1.5 text-xl font-semibold">{event.title}</h4>
+                <h4 className="mb-1.5 text-m font-semibold">{event.title}</h4>
               </div>
             </li>
           ))}
         </ol>
         <button
-          className="text-replace md:ml-4 text-2xl" // Adjusted to text-2xl for a larger "Next" button
+          className="text-replace md:ml-4 text-4xl relative" 
+          style={{maxHeight: '150px'}}
           onClick={handleNext}
           disabled={endIndex === events.length - 1}
         >
