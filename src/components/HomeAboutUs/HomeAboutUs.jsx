@@ -33,7 +33,7 @@ const HomeAboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="mb-20" />
+      <div className='mb-20' />
       <Timeline/>
     </div>
   );
