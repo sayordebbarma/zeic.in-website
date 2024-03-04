@@ -1,9 +1,10 @@
 import React from 'react'
-import './HomePage.css'
 import HomeAboutUs from '../../components/HomeAboutUs/HomeAboutUs'
 import ContactHeader from '../../components/contactHeader/ContactHeader';
 import Footer from '../../components/footer/Footer';
 import HeroSection from '../../components/heroSection/heroSection';
+import ContactUs from '../../components/contactUs/ContactUs';
+import Timetime from '../../components/test/timetime';
 
 
 function HomePage(){
@@ -12,6 +13,8 @@ function HomePage(){
       <ContactHeader />
       <HeroSection />
       <HomeAboutUs />
+      <ContactUs />
+      <Timetime />
       <Footer />
     </>
   )
