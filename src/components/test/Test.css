@@ -1,0 +1,23 @@
+.timeline {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .timeline-event {
+    margin-right: 20px; /* Adjust spacing between events */
+    border: 1px solid #ccc; /* Add borders for events */
+    padding: 10px; /* Add padding for event content */
+  }
+  
+  .timeline-event-date {
+    font-weight: bold;
+  }
+  
+  .timeline-event-description {
+    margin-top: 5px;
+  }
+  .timeline-event {
+    margin-right: 20px; /* Adjust spacing between events */
+    padding: 10px; /* Add padding for event content */
+  }
+
