@@ -25,40 +25,38 @@ const Timeline = () => {
 
   return (
     <div className="timeline-container flex justify-center" style={{ width: '300px', minHeight: '250px', margin: '0 auto'}}>
-      <div className="md:flex md:justify-right md:gap-6 md:border-l-0 md:border-t">
+      
         <button
           className="text-replace md:ml-4 text-4xl relative" 
-          style={{maxHeight: '150px'}}
+          style={{maxHeight: '150px', minWidth: '150px'}}
           onClick={handlePrev}
           disabled={startIndex === 0}
         >
           {'<'}
         </button>
-        <ol className="border-l border-neutral-300 dark:border-neutral-500 md:flex md:justify-center md:gap-6 md:border-l-0 md:border-t">
+        <ol className="border-1 dark:border-neutral-500 md:flex md:justify-center md:border-t md:gap-1 relative ">
         {events.slice(startIndex, endIndex + 1).map((event, index) => (
-            <li key={index} className="mb-4 md:mb-0" style={{ flex: `1 0 ${(100 / initialDisplayCount).toFixed(2)}%`, width: '300px'}}>
-              <div className="flex items-center md:flex-col md:items-start">
-                <div className="md:-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500 md:-mt-[5px] md:ml-0 md:mr-0"></div>
-                <p className="mt-2 text-xl text-neutral-500 dark:text-neutral-300 font-semibold">
+            <li key={index} className="flex flex-col items-center mx-4 mb-4 md:mb-0" style={{ flex: `1 0 ${(100 / initialDisplayCount).toFixed(2)}%`, width: '300px'}}>
+
+                <div className="bg-gray-400 w-4 h-4 rounded-full flex items-center justify-center mb-2 absolute top-[-9px]"></div>
+                <p className="mt-2 text-2xl text-neutral-500 dark:text-neutral-300 font-semibold">
                   {event.year}
                 </p>
-              </div>
-              <div className="ml-4 md:ml-0">
-                <h4 className="mb-1.5 text-m font-semibold">{event.title}</h4>
-              </div>
+                <h4 className="mb-1.5 text-m font-semibold text-center">{event.title}</h4>
+          
             </li>
           ))}
         </ol>
         <button
           className="text-replace md:ml-4 text-4xl relative" 
-          style={{maxHeight: '150px'}}
+          style={{maxHeight: '150px', minWidth: '150px'}}
           onClick={handleNext}
           disabled={endIndex === events.length - 1}
         >
           {'>'}
         </button>
       </div>
-    </div>
+
   );
 };
 
