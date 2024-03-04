@@ -11,7 +11,7 @@ const Footer = () => {
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4'>
             <div className='font-light sm:col-span-2'>
                 <h1 className='max-w-lg text-xl font-semibold tracking-tight xl:text-2xl'>Zip Engineering<br/>&<br/>Innovation Centre</h1>
-                <p className='mt-5 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p className='my-3'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
                 <p><FontAwesomeIcon icon={faPhoneFlip} /> +91 123456789</p>
                 <p><FontAwesomeIcon icon={faPaperPlane} /> example@email.com</p>
             </div>
