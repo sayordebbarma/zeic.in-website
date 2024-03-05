@@ -1,54 +1,40 @@
-import React from 'react'
-import homebg from '../../assets/images/products/homebg.png'
+import React, { useState } from 'react';
+import zipSound1 from '../../assets/images/products/zipSound/zipSound1.png'
+import zipSound5 from '../../assets/images/products/zipSound/zipSound5.png'
+import zipSound7 from '../../assets/images/products/zipSound/zipSound7.png'
+import zipSound10 from '../../assets/images/products/zipSound/zipSound10.png'
+import servoStabilizer1 from '../../assets/images/products/servoStabilizer/servoStabilizer1.png'
+import CNCWoodworks1 from '../../assets/images/products/CNCWoodworks/CNCWoodworks1.png'
+
 import { Link } from 'react-router-dom'
 
-const productCards = () => {
-  return (
-    <div className="flex flex-row justify-evenly">
-    <Link to="products">
-        <div class="max-w-64 rounded-lg shadow bg-gray-800 border-gray-700">
-            <img class="rounded-t-lg" src={homebg} alt="" />
-        <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Zip speaker</h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <Link href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg>
-            </Link>
-        </div>
-    </div>
-    </Link>
-    <Link to="products">
-        <div class="max-w-64 rounded-lg shadow bg-gray-800 border-gray-700">
-            <img class="rounded-t-lg h-52" src={homebg} alt="" />
-        <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Zip speaker</h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-    </div>
-    </Link>
-    <Link to="products">
-      <div className="max-w-64 rounded-lg shadow bg-gray-800 border-gray-700 overflow-hidden hover:bg-gray-900 transform transition duration-300 ease-in-out hover:scale-105">
-        <img className="rounded-t-lg h-52" src={homebg} alt="" />
-        <div className="p-5 rounded-t-2xl">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">Zip speaker</h5>
-          <p className="mb-3 font-normal text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </div>
-    </Link>
-    <Link to="products">
-      <div className="max-w-64 rounded-lg shadow bg-gray-800 border-gray-700 overflow-hidden hover:bg-gray-900 transform transition duration-300 ease-in-out hover:scale-105">
-        <img className="rounded-t-lg h-52" src={homebg} alt="" />
-        <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">Zip speaker</h5>
-          <p className="mb-3 font-normal text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </div>
-    </Link>
-    </div>
-  )
-}
+const products = [
+  { id: 1, name: 'Zip speaker', image: zipSound1, description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+  { id: 2, name: 'Another product', image: zipSound5, description: 'Another product description.' },
+  { id: 3, name: 'Zip speaker', image: zipSound10, description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+  { id: 4, name: 'Another product', image: zipSound7, description: 'Another product description.' },
+  { id: 5, name: 'Servo Stabilizer', image: servoStabilizer1, description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+  { id: 6, name: 'CNC Woodwork', image: CNCWoodworks1, description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+];
 
-export default productCards
+const ProductCards = () => {
+  return (
+    <div className="flex justify-evenly">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        {products.map(product => (
+          <Link to="products" key={product.id}>
+            <div className="max-w-64 rounded-lg shadow bg-gray-800 border-gray-700 overflow-hidden hover:bg-gray-900 transform transition duration-300 ease-in-out hover:scale-105 h-96">
+              <img className="object-cover rounded-t-lg h-52 w-full" src={product.image} alt="" />
+              <div className="p-5 rounded-t-2xl">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{product.name}</h5>
+                <p className="mb-3 font-normal text-gray-400">{product.description}</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ProductCards
