@@ -40,8 +40,9 @@ const Footer = () => {
                   marginwidth='0'
                   src='https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=near&amp;output=embed'></iframe>
                 </div>
+                
                 <div className='mt-3 font-light'>
-                  <p><FontAwesomeIcon icon={faLocationDot} /> Chümukedima, Nagaland</p>
+                  <p><FontAwesomeIcon icon={faLocationDot} /> Chümoukedima, Nagaland</p>
                 </div>
             </div>
         </div>
