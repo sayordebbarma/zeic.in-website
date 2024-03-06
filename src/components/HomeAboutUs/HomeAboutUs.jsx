@@ -7,7 +7,7 @@ import InnovatorImg from '../../assets/images/Innovator/Innovator_img.png'
 const HomeAboutUs = () => {
   return (
     <div className='container mx-auto p-8'>
-      <h1 className='text-5xl font-bold text-center text-gray-800 mb-8'>About Us</h1>
+      <h1 className='text-5xl font-bold text-center text-gray-800 my-10'>About Us</h1>
       <div className='flex flex-col justify-center md:flex-row items-center'>
         <div className='relative md:w-1/5 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden' style={{ boxShadow: '10px 10px', padding: '0' }}>
           <img
