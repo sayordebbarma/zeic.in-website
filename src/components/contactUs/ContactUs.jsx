@@ -1,11 +1,39 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhoneFlip, faLocationDot,faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const ContactUs = () => {
   return (
     <div className="relative h-screen">
       <h1 className="text-5xl font-bold text-center text-gray-800 mb-8">Contact Us</h1>
-      <div className="container px-20 py-16 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+      <div className="container px-20 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
+      <div className="lg:w-1/2 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0">
+          <h2 className="text-4xl font-bold text-gray-600 mb-10">Reach us at</h2>
+          <div className="flex text-red-600">
+          <FontAwesomeIcon icon={faLocationDot} className="mr-3" /> 
+          <p className="text-gray-600 mb-4">
+              Hno. 138, Lane-6, Aoyim Village <br/>
+              Nuiland Road, 4th Mile Chümoukedima <br/>
+              Nagaland : 797115
+              </p>
+          </div>
+          
+          <div className="flex text-red-600">
+            <FontAwesomeIcon icon={faPhoneFlip} className="mr-3" /> 
+            <p className="text-gray-600 mb-4">
+              +91 7005521094 <br />
+              +91 9402696843
+          </p>
+          </div>
+
+          <div className="flex text-red-600">
+            <FontAwesomeIcon icon={faPaperPlane} className="mr-3" /> 
+            <p className="text-gray-600 mb-4">
+            <span>example@email.com</span>
+          </p>
+          </div>
+          </div>
+        <div className="lg:w-1/2 md:w-full sm:w-full bg-white flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0">
           <div className="relative mb-4">
           <label htmlFor="firstName" className="leading-7 text-sm text-gray-600">
               First Name
