@@ -19,7 +19,7 @@ function HomePage(){
       <HomeAboutUs />
       <ContactUs />
       <Footer />
-      <ScrollToTop smooth className='bg-red-800 hover:bg-red-600' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
+      <ScrollToTop smooth className='bg-red-600 hover:bg-red-800' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
     </>
   )
 }
