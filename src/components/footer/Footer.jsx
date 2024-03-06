@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneFlip, faLocationDot,faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneFlip, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ const Footer = () => {
                 <h1 className='max-w-lg text-xl font-semibold tracking-tight xl:text-2xl'>Zip Engineering<br/>&<br/>Innovation Centre</h1>
                 <p className='my-3'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
                 <p><FontAwesomeIcon icon={faPhoneFlip} /> +91 123456789</p>
-                <p><FontAwesomeIcon icon={faPaperPlane} /> example@email.com</p>
+                <p><FontAwesomeIcon icon={faEnvelope} /> example@email.com</p>
             </div>
 
             <div>
