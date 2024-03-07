@@ -12,8 +12,8 @@ const Footer = () => {
             <div className='font-light sm:col-span-2'>
                 <h1 className='max-w-lg text-xl font-semibold tracking-tight xl:text-2xl'>Zip Engineering<br/>&<br/>Innovation Centre</h1>
                 <p className='my-3'>An “All In One” centre with Innovation, Sustainability<br/> and Development zipped under one roof</p>
-                <p><FontAwesomeIcon icon={faPhoneFlip} /> +91 123456789</p>
-                <p><FontAwesomeIcon icon={faEnvelope} /> example@email.com</p>
+                <p><FontAwesomeIcon className="mr-3" icon={faPhoneFlip} /> +91 123456789</p>
+                <p><FontAwesomeIcon className="mr-3" icon={faEnvelope} /> example@email.com</p>
             </div>
 
             <div>
@@ -41,8 +41,11 @@ const Footer = () => {
                   src='https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=near&amp;output=embed'></iframe>
                 </div>
                 
-                <div className='mt-3 font-light'>
-                  <p><FontAwesomeIcon icon={faLocationDot} /> Chümoukedima, Nagaland</p>
+                <div className='flex mt-3 font-light'>
+                  <FontAwesomeIcon className="mr-3" icon={faLocationDot} />
+                  <p>Hno. 138, Lane-6, Aoyim Village <br />
+                  Nuiland Road, 4th Mile  <br />
+                  Chümoukedima, Nagaland : 797115</p>
                 </div>
             </div>
         </div>
