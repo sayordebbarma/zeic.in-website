@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <div className={`w-full px-4 fixed top-12 z-20 ${color ? 'bg-gray-800 bg-opacity-50' : 'bg-transparent'}`}>
-        <div className='flex justify-between items-center w-11/12 h-20 m-auto text-white'>
+        <div className='flex justify-between items-center w-full h-20 m-auto text-white'>
           <div className='flex items-center'>
             <img className='h-20' src={zeicLogo} alt="zeic logo" />
             <h1 className='text-3xl font-bold ml-2'>ZEIC</h1>
