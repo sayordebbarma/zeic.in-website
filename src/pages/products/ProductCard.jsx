@@ -1,10 +1,22 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
-import img1 from '../../assets/images/products/zipSound/zipSound5.png'
-import img7 from '../../assets/images/products/zipSound/zipSound7.png'
-import img10 from '../../assets/images/products/zipSound/zipSound10.png'
-
+import zs1 from '../../assets/images/products/zipSound/zs1.png'
+import zs2 from '../../assets/images/products/zipSound/zs2.png'
+import zs3 from '../../assets/images/products/zipSound/zs3.png'
+import zs4 from '../../assets/images/products/zipSound/zs4.png'
+import zs5 from '../../assets/images/products/zipSound/zs5.png'
+import zs6 from '../../assets/images/products/zipSound/zs6.png'
+import zs7 from '../../assets/images/products/zipSound/zs7.png'
+import cnc1 from '../../assets/images/products/CNCWoodworks/cnc1.png'
+import cnc2 from '../../assets/images/products/CNCWoodworks/cnc2.png'
+import cnc3 from '../../assets/images/products/CNCWoodworks/cnc3.png'
+import cnc4 from '../../assets/images/products/CNCWoodworks/cnc4.png'
+import cnc5 from '../../assets/images/products/CNCWoodworks/cnc5.png'
+import cnc6 from '../../assets/images/products/CNCWoodworks/cnc6.png'
+import cnc7 from '../../assets/images/products/CNCWoodworks/cnc7.png'
+import elc1 from '../../assets/images/products/elc/elc.png'
+import servo1 from '../../assets/images/products/servoStabilizer/servoStabilizer1.png'
 
 const ProductCard = ({ productId }) => {
     const products = [
@@ -27,9 +39,13 @@ const ProductCard = ({ productId }) => {
                 </>
             ),
             images: [
-                img1,
-                img10,
-                img7
+                zs5,
+                zs2,
+                zs3,
+                zs4,
+                zs1,
+                zs6,
+                zs7
             ]
         },
         {
@@ -52,9 +68,13 @@ const ProductCard = ({ productId }) => {
                 </>
             ),
             images: [
-                img7,
-                img1,
-                img10
+                cnc1,
+                cnc2,
+                cnc3,
+                cnc4,
+                cnc5,
+                cnc6,
+                cnc7
             ]
         },
         {
@@ -78,9 +98,7 @@ const ProductCard = ({ productId }) => {
                 </>
             ),
             images: [
-                img1,
-                img10,
-                img7
+                elc1
             ]
         },
         {
@@ -100,9 +118,7 @@ const ProductCard = ({ productId }) => {
                 </>
             ),
             images: [
-                img7,
-                img1,
-                img10
+                servo1
             ]
         },
     ];
