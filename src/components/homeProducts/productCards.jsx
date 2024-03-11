@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import elc1 from '../../assets/images/products/elc/elc1.png'
-import zipSound10 from '../../assets/images/products/zipSound/zipSound10.png'
+import ZipSound from '../../assets/images/products/zipSound/ZipSound.png'
 import servoStabilizer1 from '../../assets/images/products/servoStabilizer/servoStabilizer1.png'
 import CNCWoodworks from '../../assets/images/products/CNCWoodworks/CNCWoodworks.png'
 
 import { Link } from 'react-router-dom'
 
 const products = [
-  { id: 1, name: 'Zip Sound', image: zipSound10, description: 'Elite in-house public address speakers. Experience world-class audio quality and precision. Ideal for stadiums, theaters, and events, ensuring crystal-clear sound for an immersive and memorable auditory experience' },
+  { id: 1, name: 'Zip Sound', image: ZipSound, description: 'Elite in-house public address speakers. Experience world-class audio quality and precision. Ideal for stadiums, theaters, and events, ensuring crystal-clear sound for an immersive and memorable auditory experience' },
   { id: 2, name: 'CNC Woodwork', image: CNCWoodworks, description: 'Explore limitless possibilities with our CNC-carved woodcraft for signboards, main doors, and furniture. Meticulously crafted and customizable, enriched with epoxy resin, brings unique elegance to any space' },
   { id: 3, name: 'ELC', image: elc1, description: 'Digital Electronic Load Controller for Pico and Micro Hydro power. This innovative device stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation' },
   { id: 4, name: 'Servo Stabilizer', image: servoStabilizer1, description: 'Enhance power reliability with our 3-Phase Servo Stabilizer. Engineered for precision, it regulates voltage across three phases, safeguarding your equipment and ensuring uninterrupted performance in diverse applications' },
