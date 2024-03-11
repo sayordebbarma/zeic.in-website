@@ -12,7 +12,7 @@ const ContactInfo = ({ icon, text }) => {
   );
 };
 
-const ContactUs = () => {
+const ContactUsCopy = () => {
   const form = useRef()
 
   const sendEmail = (e) => {
@@ -152,4 +152,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactUsCopy;

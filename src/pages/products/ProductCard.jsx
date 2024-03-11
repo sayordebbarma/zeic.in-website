@@ -85,7 +85,7 @@ const ProductCard = ({ productId }) => {
                   <p><strong>Specifications:</strong></p>
                   <ul className='list-disc pl-6 mt-[-10px]'>
                     <li className= 'lg: mb-[-30px]'><strong>Type: </strong> Analogue/Digital</li>
-                    <li className= 'lg: mb-[-30px]'><strong>Power: </strong> 5kW and 100kW </li>
+                    <li className= 'lg: mb-[-30px]'><strong>Power: </strong> 5kW to 250kW </li>
                     <li className= 'lg: mb-[-5px]'><strong>Weight: </strong> 1.5 kgs</li>
                   </ul>
         
