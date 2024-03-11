@@ -5,6 +5,7 @@ import { faPhoneFlip, faLocationDot, faEnvelope } from '@fortawesome/free-solid-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const linkStyle = 'transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-red-500'
   return (
     <footer className='bg-gray-800 text-white'>
       <div className='container px-6 py-12 mx-auto'>
@@ -20,10 +21,10 @@ const Footer = () => {
                 <p className='font-semibold text-white'>Quick Link</p>
                 <div className='flex flex-col items-start mt-5 space-y-2'>
                     
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>Products</Link>
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>About Us</Link>
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>Career</Link>
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>Contacts</Link>
+                    <Link className={linkStyle}>Products</Link>
+                    <Link className={linkStyle}>About Us</Link>
+                    <Link className={linkStyle}>Career</Link>
+                    <Link className={linkStyle}>Contacts</Link>
                 </div>
             </div>
 
@@ -51,7 +52,10 @@ const Footer = () => {
         </div>
         
         <hr className='my-6 md:my-8 border-white h-1' />
+        <div className='flex justify-between'>
         <p className='p-8 font-light text-start md:text-center md:text-sm md:p-4'>&copy; {currentYear} Zip Engineering & Innovation Centre. All rights reserved.</p>
+        <p className='p-8 font-light text-start md:text-center md:text-sm md:p-4'>Designed by Sayor Debbarma</p>
+        </div>
       </div>
 </footer>
   )
