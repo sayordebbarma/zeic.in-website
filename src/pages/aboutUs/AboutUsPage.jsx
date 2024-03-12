@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
-import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/navbar/Navbar';
 
-function AboutUsPage(){
-  return(
+function AboutUsPage() {
+  return (
     <div>
-      <Navbar/>
-      <ContactHeader/>
-      <Footer/>
+      <ContactHeader />
+      <Navbar navbarClassName='bg-gray-700' />
     </div>
-  )
+  );
 }
 
-export default AboutUsPage
+export default AboutUsPage;
