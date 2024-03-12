@@ -1,8 +1,15 @@
 import React from 'react'
+import ContactHeader from '../../components/contactHeader/ContactHeader';
+import Footer from '../../components/footer/Footer';
+import Navbar from '../../components/navbar/Navbar';
 
-const AboutUsPage = () => {
-  return (
-    <div>AboutUsPage</div>
+function AboutUsPage(){
+  return(
+    <div>
+      <Navbar/>
+      <ContactHeader/>
+      <Footer/>
+    </div>
   )
 }
 

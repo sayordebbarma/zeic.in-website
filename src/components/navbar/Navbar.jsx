@@ -47,7 +47,7 @@ const Navbar = () => {
               <NavLink to="/products" className={getNavLinkClass('/products')}>Products</NavLink>
             </li>
             <li>
-              <NavLink to="/about" className={getNavLinkClass('/about')}>About us</NavLink>
+              <NavLink to="/aboutus" className={getNavLinkClass('/about')}>About us</NavLink>
             </li>
             <li>
               <NavLink to="/career" className={getNavLinkClass('/career')}>Career</NavLink>
