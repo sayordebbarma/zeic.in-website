@@ -193,8 +193,9 @@ const ProductCard = ({ productId }) => {
                     <div className='fe w-full h-full rounded-2xl overflow-hidden'
                         style={{
                             backgroundImage: `url(${product.images[productImg]})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'top',
+                            backgroundSize: 'contain',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
                         }}>
 
                         <div className='hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 left-5 text-2xl rounded-full p-2 cursor-pointer z-10' >

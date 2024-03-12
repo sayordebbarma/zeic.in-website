@@ -30,10 +30,10 @@ const Footer = () => {
             <div className='lg:mx-[-50px]'>
               <p className='font-semibold text-white'>Products</p>
               <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>Zip Sound</Link>
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>CNC Woodwork</Link>
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>ELC</Link>
-                    <Link className='transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-blue-500'>Servo Stabilizer</Link>
+              <Link className={linkStyle}>Zip Sound</Link>
+              <Link className={linkStyle}>CNC Woodwork</Link>
+              <Link className={linkStyle}>ELC</Link>
+              <Link className={linkStyle}>Servo Stabilizer</Link>
               </div>
             </div>
 
@@ -58,7 +58,7 @@ const Footer = () => {
                   Chümoukedima, Nagaland : 797115</p>
                 </div>
                 <p className='flex mt-3 font-light'><FontAwesomeIcon className="mr-3" icon={faPhoneFlip} /> +91 7005521094/+91 9402696843</p>
-                <p className='flex mt-3 font-light'><FontAwesomeIcon className="mr-3" icon={faEnvelope} /> example@email.com</p>
+                <p className='flex mt-3 font-light'><FontAwesomeIcon className="mr-3" icon={faEnvelope} /> zeicinfo@gmail.com</p>
             </div>
         </div>
         
