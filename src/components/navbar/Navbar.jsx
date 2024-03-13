@@ -36,8 +36,8 @@ const Navbar = ({ navbarClassName }) => {
     <div
       className={`w-full px-4 fixed top-12 z-20 ${navbarClassName} ${
         color
-          ? 'bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm'
-          : 'bg-transparent'
+          ? 'bg-gray-700 bg-opacity-50 backdrop-filter backdrop-blur-sm'
+          : ''
       }`}
     >
       <div className='flex justify-between items-center w-full h-20 m-auto text-white'>
@@ -62,7 +62,7 @@ const Navbar = ({ navbarClassName }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/aboutus' className={getNavLinkClass('/about')}>
+            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')}>
               About us
             </NavLink>
           </li>

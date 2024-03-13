@@ -7,6 +7,7 @@ const ContactPage = () => {
     <div>
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-700' />
+
     </div>
   );
 };
