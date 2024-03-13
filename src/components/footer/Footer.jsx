@@ -36,10 +36,18 @@ const Footer = () => {
           <div>
             <p className='font-semibold text-white'>Quick Link</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link className={linkStyle}>Products</Link>
-              <Link className={linkStyle}>About Us</Link>
-              <Link className={linkStyle}>Career</Link>
-              <Link className={linkStyle}>Contacts</Link>
+              <Link to='/products' className={linkStyle}>
+                Products
+              </Link>
+              <Link to='/aboutus' className={linkStyle}>
+                About Us
+              </Link>
+              <Link to='/career' className={linkStyle}>
+                Career
+              </Link>
+              <Link to='/contact' className={linkStyle}>
+                Contact
+              </Link>
             </div>
           </div>
           <div className='lg:mx-[-50px]'>
