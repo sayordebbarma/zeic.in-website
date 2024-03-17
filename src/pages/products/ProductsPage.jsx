@@ -3,6 +3,9 @@ import Navbar from '../../components/navbar/Navbar';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
 import ProductCard from './ProductCard';
 import Footer from '../../components/footer/Footer';
+import ScrollToTop from 'react-scroll-to-top';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 function ProductsPage() {
   return (
@@ -16,6 +19,7 @@ function ProductsPage() {
         <ProductCard productId={4} />
       </div>
       <Footer />
+      <ScrollToTop smooth className='bg-red-600 hover:bg-red-800' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
     </div>
   );
 }
