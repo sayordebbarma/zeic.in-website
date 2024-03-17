@@ -200,7 +200,22 @@ const ProductCard = ({ productId }) => {
     setIsImageExpanded(!isImageExpanded);
   };
 
-  const cycleBackground = () => {
+  // const cycleBackground = () => {
+  //   const nextIndex =
+  //     (productImg + 1) %
+  //     products.find((product) => product.id === productId).images.length;
+  //   setProductImg(nextIndex);
+  // };
+  const handlePrev = () => {
+    const prevIndex =
+      (productImg -
+        1 +
+        products.find((product) => product.id === productId).images.length) %
+      products.find((product) => product.id === productId).images.length;
+    setProductImg(prevIndex);
+  };
+
+  const handleNext = () => {
     const nextIndex =
       (productImg + 1) %
       products.find((product) => product.id === productId).images.length;
@@ -237,7 +252,7 @@ const ProductCard = ({ productId }) => {
               <FontAwesomeIcon
                 icon={faCircleChevronLeft}
                 onClick={(e) => {
-                  cycleBackground(-1);
+                  handlePrev();
                   e.stopPropagation();
                 }}
                 className='size-6'
@@ -247,7 +262,7 @@ const ProductCard = ({ productId }) => {
               <FontAwesomeIcon
                 icon={faCircleChevronRight}
                 onClick={(e) => {
-                  cycleBackground(1);
+                  handleNext();
                   e.stopPropagation();
                 }}
                 className='size-6'
@@ -257,7 +272,6 @@ const ProductCard = ({ productId }) => {
         </div>
       )}
 
-      {/* Product details */}
       <div className='flex justify-center items-center w-full h-full z-10'>
         <div className='w-3/4 rounded-xl p-8'>
           <h2 className='text-2xl font-semibold mb-4'>{product.name}</h2>
@@ -284,7 +298,7 @@ const ProductCard = ({ productId }) => {
               <FontAwesomeIcon
                 icon={faCircleChevronLeft}
                 onClick={(e) => {
-                  cycleBackground(-1);
+                  handlePrev();
                   e.stopPropagation();
                 }}
                 className='size-6'
@@ -294,7 +308,7 @@ const ProductCard = ({ productId }) => {
               <FontAwesomeIcon
                 icon={faCircleChevronRight}
                 onClick={(e) => {
-                  cycleBackground(1);
+                  handleNext();
                   e.stopPropagation();
                 }}
                 className='size-6'
@@ -304,28 +318,8 @@ const ProductCard = ({ productId }) => {
         </div>
       )}
 
-      {/* Expanded image for even product IDs */}
-      {isEven && isImageExpanded && (
-        <div
-          className='fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 flex justify-center items-center z-50'
-          onClick={toggleImageExpansion}
-        >
-          <button
-            className='absolute top-5 right-5 text-white text-2xl'
-            onClick={toggleImageExpansion}
-          >
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-          <img
-            src={product.images[productImg]}
-            alt='Expanded Image'
-            className='max-w-full max-h-full'
-          />
-        </div>
-      )}
-
-      {/* Expanded image for odd product IDs */}
-      {!isEven && isImageExpanded && (
+      {/* Expanded image for even product */}
+      {isImageExpanded && (
         <div
           className='fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 flex justify-center items-center z-50'
           onClick={toggleImageExpansion}
