@@ -1,0 +1,79 @@
+import zs1 from '../assets/images/products/zipSound/zs1.png';
+import zs2 from '../assets/images/products/zipSound/zs2.png';
+import zs3 from '../assets/images/products/zipSound/zs1.png';
+import zs4 from '../assets/images/products/zipSound/zs2.png';
+import zs5 from '../assets/images/products/zipSound/zs2.png';
+import zs6 from '../assets/images/products/zipSound/zs1.png';
+import zs7 from '../assets/images/products/zipSound/zs2.png';
+import cnc1 from '../assets/images/products/CNCWoodworks/cnc1.png';
+import cnc2 from '../assets/images/products/CNCWoodworks/cnc2.png';
+import cnc3 from '../assets/images/products/CNCWoodworks/cnc3.png';
+import cnc4 from '../assets/images/products/CNCWoodworks/cnc4.png';
+import cnc5 from '../assets/images/products/CNCWoodworks/cnc5.png';
+import cnc6 from '../assets/images/products/CNCWoodworks/cnc6.png';
+import cnc7 from '../assets/images/products/CNCWoodworks/cnc7.png';
+import elc1 from '../assets/images/products/elc/elc.png';
+import servo1 from '../assets/images/products/servoStabilizer/servoStabilizer1.png';
+
+export const products = [
+  {
+    id: 1,
+    name: 'Zip Sound',
+    description:
+      'Elite in-house public address speakers. Experience world-class audio quality and precision. Ideal for stadiums, theaters, and events, ensuring crystal-clear sound for an immersive and memorable auditory experience',
+    types: [
+      'High Speakers: Experience crystal-clear highs that bring out the nuances in your music.',
+      'Mid Speakers: Enjoy well-defined midrange frequencies that enhance vocals and instrumentals.',
+      'Low Speakers: Feel the deep, rich bass that adds power to your audio experience.',
+      'Subwoofers: Immerse yourself in heart-thumping bass, elevating every beat.',
+      'Line Array Speakers: Perfect for large venues, delivering consistent sound coverage.',
+      'Monitor Speakers: Precision audio monitoring for recording studios and professional setups.',
+    ],
+    specifications: ['powerRange: 300 W - 4000 W'],
+    images: [zs1, zs2, zs3, zs4, zs5, zs6, zs7],
+  },
+  {
+    id: 2,
+    name: 'CNC Woodwork',
+    description:
+      'Explore limitless possibilities with our CNC-carved woodcraft for signboards, main doors, and furniture. Meticulously crafted and customizable, enriched with epoxy resin, brings unique elegance to any space',
+    types: [
+      "Fully Customizable: Tailor our creations to suit your style and preferences, whether it's a distinctive signboard, a statement main door, or unique wooden-epoxy furniture.",
+      'Versatile Applications: Seamless integration into various settings, bringing unique elegance to homes, offices, or commercial spaces.',
+    ],
+    images: [cnc1, cnc2, cnc3, cnc4, cnc5, cnc6, cnc7],
+  },
+  {
+    id: 3,
+    name: 'ELC',
+    description:
+      'Digital Electronic Load Controller for Pico and Micro Hydro power. This innovative device stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation',
+    types: [
+      'Sign Boards: Intricately carved with CNC technology and enriched with epoxy resin for a perfect blend of functionality and aesthetics.',
+      'Main Doors: Make a statement at the entrance with main doors that showcase the beauty of CNC carving and the resilience of epoxy resin.',
+      'Customized Furniture: From tables to doors, our wooden-epoxy furniture adds sophistication and individuality to any space.',
+    ],
+    specifications: [
+      'Type: Analogue/Digital',
+      'Power: 5kW to 250kW',
+      'Weight: 1.5 kgs',
+    ],
+    images: [elc1],
+  },
+  {
+    id: 4,
+    name: 'Servo Stabilizer',
+    description:
+      'Enhance power reliability with our 3-Phase Servo Stabilizer. Engineered for precision, it regulates voltage across three phases, safeguarding your equipment and ensuring uninterrupted performance in diverse applications',
+    types: [
+      'Enhance power reliability with our 3-Phase Servo Stabilizer. Engineered for precision, it regulates voltage across three phases, safeguarding your equipment and ensuring uninterrupted performance in diverse applications.',
+    ],
+    specifications: [
+      'Phase: 3 phase',
+      'Capacity: 40 kVA',
+      'Input: 120-280 V/phase',
+      'Output: 230x3 ± 5%',
+    ],
+    images: [servo1],
+  },
+];
