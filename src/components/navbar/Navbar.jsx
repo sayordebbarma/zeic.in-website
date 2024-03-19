@@ -112,6 +112,9 @@ const Navbar = ({ navbarClassName }) => {
               <NavLink to='/products'>Products</NavLink>
             </li>
             <li className='border-b'>
+              <NavLink to='/services'>Services</NavLink>
+            </li>
+            <li className='border-b'>
               <NavLink to='/about'>About us</NavLink>
             </li>
             <li className='border-b'>

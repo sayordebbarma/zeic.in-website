@@ -91,7 +91,7 @@ const ProductCard = ({ productId }) => {
           <h2 className='text-2xl font-bold'>{product.name}</h2>
 
           <ul className='list-disc'>
-            <h1 className='font-bold text-md my-2'>Types - </h1>
+            <h1 className='font-bold text-md my-2'>Types: </h1>
             {product.types.map((type, index) => (
               <li key={index} className='text-sm p-0'>
                 {type}
@@ -101,7 +101,7 @@ const ProductCard = ({ productId }) => {
 
           {Array.isArray(product.specifications) && (
             <ul className='list-disc'>
-              <h1 className='font-bold text-md my-2'>Specifications - </h1>
+              <h1 className='font-bold text-md my-2'>Specifications: </h1>
               {product.specifications.map((specification, index) => (
                 <li key={index} className='text-sm p-0'>
                   {specification}
