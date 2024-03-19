@@ -1,10 +1,10 @@
 import zs1 from '../assets/images/products/zipSound/zs1.png';
 import zs2 from '../assets/images/products/zipSound/zs2.png';
-import zs3 from '../assets/images/products/zipSound/zs1.png';
-import zs4 from '../assets/images/products/zipSound/zs2.png';
-import zs5 from '../assets/images/products/zipSound/zs2.png';
-import zs6 from '../assets/images/products/zipSound/zs1.png';
-import zs7 from '../assets/images/products/zipSound/zs2.png';
+import zs3 from '../assets/images/products/zipSound/zs3.png';
+import zs4 from '../assets/images/products/zipSound/zs4.png';
+import zs5 from '../assets/images/products/zipSound/zs5.png';
+import zs6 from '../assets/images/products/zipSound/zs6.png';
+import zs7 from '../assets/images/products/zipSound/zs7.png';
 import cnc1 from '../assets/images/products/CNCWoodworks/cnc1.png';
 import cnc2 from '../assets/images/products/CNCWoodworks/cnc2.png';
 import cnc3 from '../assets/images/products/CNCWoodworks/cnc3.png';
@@ -38,8 +38,13 @@ export const products = [
     description:
       'Explore limitless possibilities with our CNC-carved woodcraft for signboards, main doors, and furniture. Meticulously crafted and customizable, enriched with epoxy resin, brings unique elegance to any space',
     types: [
-      "Fully Customizable: Tailor our creations to suit your style and preferences, whether it's a distinctive signboard, a statement main door, or unique wooden-epoxy furniture.",
-      'Versatile Applications: Seamless integration into various settings, bringing unique elegance to homes, offices, or commercial spaces.',
+      'Sign Boards: Intricately carved with CNC technology and enriched with epoxy resin for a perfect blend of functionality and aesthetics.',
+      'Main Doors: Make a statement at the entrance with main doors that showcase the beauty of CNC carving and the resilience of epoxy resin.',
+      'Customized Furniture: From tables to doors, our wooden-epoxy furniture adds sophistication and individuality to any space.',
+    ],
+    specifications: [
+      'Fully Customizable',
+      'Versatile Applications'
     ],
     images: [cnc1, cnc2, cnc3, cnc4, cnc5, cnc6, cnc7],
   },
@@ -49,12 +54,10 @@ export const products = [
     description:
       'Digital Electronic Load Controller for Pico and Micro Hydro power. This innovative device stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation',
     types: [
-      'Sign Boards: Intricately carved with CNC technology and enriched with epoxy resin for a perfect blend of functionality and aesthetics.',
-      'Main Doors: Make a statement at the entrance with main doors that showcase the beauty of CNC carving and the resilience of epoxy resin.',
-      'Customized Furniture: From tables to doors, our wooden-epoxy furniture adds sophistication and individuality to any space.',
+      'Analogue ELC: Uses analog circuitry to regulate and control electrical loads.',
+      'Digital ELC: Digital electronic load control utilizes digital technology, such as microcontrollers or digital signal processors (DSPs), to manage and regulate electrical loads.',
     ],
     specifications: [
-      'Type: Analogue/Digital',
       'Power: 5kW to 250kW',
       'Weight: 1.5 kgs',
     ],
