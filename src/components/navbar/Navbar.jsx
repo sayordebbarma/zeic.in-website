@@ -62,6 +62,11 @@ const Navbar = ({ navbarClassName }) => {
             </NavLink>
           </li>
           <li>
+            <NavLink to='/services' className={getNavLinkClass('/services')}>
+              Services
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')}>
               About us
             </NavLink>
