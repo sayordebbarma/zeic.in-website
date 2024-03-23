@@ -7,24 +7,30 @@ export const team = [
         id: 1,
         name: 'Sungkumningsang',
         role: 'Sound Engineer',
-        img: team1
+        avatar: team1
     },
     {
         id: 2,
         name: 'Toshi',
         role: 'Speaker Assembler',
-        img: team2
+        avatar: team2
     },
     {
         id: 3,
         name: 'John',
         role: 'CNC Operator',
-        img: team3
+        avatar: team3
     },
     {
         id: 4,
         name: 'Somil',
         role: 'Sawmill Operator',
-        img: team1
-    }
+        avatar: team1
+    },
+    {
+        id: 5,
+        name: 'John',
+        role: 'CNC Operator',
+        avatar: team3
+    },
 ];
