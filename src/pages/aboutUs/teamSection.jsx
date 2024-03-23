@@ -23,8 +23,8 @@ const TeamMember = ({ id, name, role, avatar }) => {
   return (
     <div key={id} className="p-4 lg:w-1/4 md:w-1/2">
       <div className="h-full flex flex-col items-center text-center">
-        <img alt="team" className="flex-shrink-0 rounded-full w-56 h-56 object-cover object-center mb-4" src={avatar} />
-        {/* <img alt="team" className="flex-shrink-0 rounded-full w-full h-full object-cover object-center mb-4" src={avatar} /> */}
+        {/* <img alt="team" className="flex-shrink-0 rounded-full w-56 h-56 object-cover object-center mb-4" src={avatar} /> */}
+        <img alt="team" className="flex-shrink-0 rounded-full w-48 h-64 object-cover object-center mb-4" src={avatar} />
 
         <div className="w-full">
           <h2 className="title-font font-medium text-lg text-gray-900">{name}</h2>
