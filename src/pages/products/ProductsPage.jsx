@@ -9,7 +9,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 function ProductsPage() {
   return (
-    <div>
+    <>
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-700' />
       <div className='flex flex-wrap flex-col'>
@@ -20,7 +20,7 @@ function ProductsPage() {
       </div>
       <Footer />
       <ScrollToTop smooth className='bg-red-600 hover:bg-red-800' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
-    </div>
+    </>
   );
 }
 
