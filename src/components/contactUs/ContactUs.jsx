@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPhoneFlip,
@@ -6,6 +6,15 @@ import {
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
+// import {
+//   Button,
+//   Dialog,
+//   DialogActions,
+//   DialogContent,
+//   DialogContentText,
+//   DialogTitle,
+// } from '@mui/material';
+import { Dialog } from '@headlessui/react';
 
 const ContactInfo = ({ icon, text }) => {
   return (
@@ -22,6 +31,8 @@ const ContactInfo = ({ icon, text }) => {
 
 const ContactUs = () => {
   const form = useRef();
+  const [openDialog, setOpenDialog] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -32,13 +43,18 @@ const ContactUs = () => {
       })
       .then(
         () => {
-          console.log('Form Submitted!', result.text);
+          setSubmitted(true);
+          setOpenDialog(true);
         },
         (error) => {
           console.log('Failed...', error.text);
         }
       );
     e.target.reset();
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
   };
 
   const inputStyle =
@@ -49,6 +65,20 @@ const ContactUs = () => {
       <h1 className='text-5xl font-bold text-center text-gray-800 my-10'>
         Contact Us
       </h1>
+
+      {/* <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogTitle className='text-4xl font-bold text-red-600 mb-4'>Submitted Successfully!</DialogTitle>
+        <DialogContent>
+          <DialogContentText className='text-gray-600'>
+            Thank you for reaching out to us. We will get back to you soon.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog} className='text-red-600' autoFocus>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog> */}
 
       <div className='container px-20 pb-10 mx-auto flex sm:flex-nowrap flex-wrap'>
         <div className='lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0'>
@@ -190,6 +220,32 @@ const ContactUs = () => {
           </form>
         </div>
       </div>
+
+      {/* Dialog pop-up for submit message */}
+      <Dialog
+        open={submitted}
+        onClose={() => setSubmitted(false)}
+        className='fixed inset-0 z-50 overflow-y-auto'
+      >
+        <div className='fixed inset-0 z-0 bg-black opacity-50'></div> {/* Overlay */}
+        
+        <div className='flex justify-center items-center min-h-screen'>
+          <div className='bg-white border border-gray-300 rounded-lg p-8 max-w-md w-full z-10'>
+            <Dialog.Title className='text-2xl font-bold text-red-500 mb-4'>
+              Submitted Successfully!
+            </Dialog.Title>
+            <p className='text-gray-600'>
+              Thank you for reaching out to us. We will get back to you soon.
+            </p>
+            <button
+              className='block w-full bg-red-600 text-white font-semibold py-3 mt-6 rounded-md shadow-sm hover:bg-red-800'
+              onClick={() => setSubmitted(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </Dialog>
     </div>
   );
 };
