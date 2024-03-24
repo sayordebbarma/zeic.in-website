@@ -1,19 +1,27 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneFlip, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPhoneFlip,
+  faLocationDot,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
 
 const ContactInfo = ({ icon, text }) => {
   return (
-    <div className="flex items-center text-red-600">
-      <FontAwesomeIcon icon={icon} className="mr-3" style={{ marginTop: "-14px" }} />
-      <p className="text-gray-600 mb-4">{text}</p>
+    <div className='flex items-center text-red-600'>
+      <FontAwesomeIcon
+        icon={icon}
+        className='mr-3'
+        style={{ marginTop: '-14px' }}
+      />
+      <p className='text-gray-600 mb-4'>{text}</p>
     </div>
   );
 };
 
 const ContactUs = () => {
-  const form = useRef()
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -24,124 +32,158 @@ const ContactUs = () => {
       })
       .then(
         () => {
-          console.log('Form Submitted!',result.text);
+          console.log('Form Submitted!', result.text);
         },
         (error) => {
           console.log('Failed...', error.text);
-        },
+        }
       );
-      e.target.reset();
+    e.target.reset();
   };
 
+  const inputStyle =
+    'block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6';
+
   return (
-    <div className="relative h-full">
-      <h1 className="text-5xl font-bold text-center text-gray-800 my-10">Contact Us</h1>
-      
-      <div className="container px-20 pb-10 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0">
-          <h2 className="text-4xl font-bold text-red-600 mb-10">Reach us at</h2>
+    <div className='relative h-full'>
+      <h1 className='text-5xl font-bold text-center text-gray-800 my-10'>
+        Contact Us
+      </h1>
+
+      <div className='container px-20 pb-10 mx-auto flex sm:flex-nowrap flex-wrap'>
+        <div className='lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0'>
+          <h2 className='text-4xl font-bold text-red-600 mb-10'>Reach us at</h2>
           <div>
-            <ContactInfo icon={faLocationDot}
-            text={
-            <>
-            Hno. 138, Lane-6, Aoyim Village <br />
-            Nuiland Road, 4th Mile Chümoukedima <br />
-            Nagaland : 797115
-            </>}
-              />
-              <ContactInfo icon={faPhoneFlip}
+            <ContactInfo
+              icon={faLocationDot}
               text={
-              <> 
-              +91 7005521094 <br /> +91 9402696843
-              </>}
-              />
-              <ContactInfo icon={faEnvelope}
-              text={<span>example@email.com</span>}/>
+                <>
+                  Hno. 138, Lane-6, Aoyim Village <br />
+                  Nuiland Road, 4th Mile Chümoukedima <br />
+                  Nagaland : 797115
+                </>
+              }
+            />
+            <ContactInfo
+              icon={faPhoneFlip}
+              text={
+                <>
+                  +91 7005521094 <br /> +91 9402696843
+                </>
+              }
+            />
+            <ContactInfo
+              icon={faEnvelope}
+              text={<span>example@email.com</span>}
+            />
           </div>
         </div>
 
-        <div className="lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0">
-          <form ref={form} onSubmit={sendEmail} action="#" method="POST" className="max-w-xl">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div className='lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0'>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            action='#'
+            method='POST'
+            className='max-w-xl'
+          >
+            <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
               <div>
-                <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-600">
+                <label
+                  htmlFor='first-name'
+                  className='block text-sm font-semibold leading-6 text-gray-600'
+                >
                   First name
                 </label>
-                <div className="mt-2.5">
+                <div className='mt-2.5'>
                   <input
-                    type="text"
-                    name="first-name"
-                    id="first-name"
+                    type='text'
+                    name='first-name'
+                    id='first-name'
                     required
-                    autoComplete="given-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6"
+                    autoComplete='given-name'
+                    className={inputStyle}
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-gray-600">
+                <label
+                  htmlFor='last-name'
+                  className='block text-sm font-semibold leading-6 text-gray-600'
+                >
                   Last name
                 </label>
-                <div className="mt-2.5">
+                <div className='mt-2.5'>
                   <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
+                    type='text'
+                    name='last-name'
+                    id='last-name'
                     required
-                    autoComplete="family-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6"
+                    autoComplete='family-name'
+                    className={inputStyle}
                   />
                 </div>
               </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-600">
+              <div className='sm:col-span-2'>
+                <label
+                  htmlFor='email'
+                  className='block text-sm font-semibold leading-6 text-gray-600'
+                >
                   Email
                 </label>
-                <div className="mt-2.5">
+                <div className='mt-2.5'>
                   <input
-                    type="email"
-                    name="email"
-                    id="email"
+                    type='email'
+                    name='email'
+                    id='email'
                     required
-                    autoComplete="email"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6"
+                    autoComplete='email'
+                    className={inputStyle}
                   />
                 </div>
               </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-gray-600">
+              <div className='sm:col-span-2'>
+                <label
+                  htmlFor='phone-number'
+                  className='block text-sm font-semibold leading-6 text-gray-600'
+                >
                   Phone number
                 </label>
-                <div className="mt-2.5">
+                <div className='mt-2.5'>
                   <input
-                    type="tel"
-                    name="phone-number"
-                    id="phone-number"
+                    type='tel'
+                    name='phone-number'
+                    id='phone-number'
                     required
-                    autoComplete="tel"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                    autoComplete='tel'
+                    className={inputStyle}
                   />
                 </div>
               </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-600">
+              <div className='sm:col-span-2'>
+                <label
+                  htmlFor='message'
+                  className='block text-sm font-semibold leading-6 text-gray-600'
+                >
                   Message
                 </label>
-                <div className="mt-2.5">
+                <div className='mt-2.5'>
                   <textarea
-                    name="message"
-                    id="message"
+                    name='message'
+                    id='message'
                     required
                     rows={5}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6 resize-none"
-                    defaultValue={''}/>
+                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6 resize-none'
+                    defaultValue={''}
+                  />
                 </div>
               </div>
-              </div>
-            <div className="mt-6">
+            </div>
+            <div className='mt-6'>
               <button
-                type="submit"
-                className="block w-full rounded-md bg-red-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+                type='submit'
+                className='block w-full rounded-md bg-red-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600'
+              >
                 Submit
               </button>
             </div>

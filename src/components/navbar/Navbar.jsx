@@ -115,7 +115,7 @@ const Navbar = ({ navbarClassName }) => {
               <NavLink to='/services'>Services</NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/about'>About us</NavLink>
+              <NavLink to='/aboutus'>About us</NavLink>
             </li>
             <li className='border-b'>
               <NavLink to='/career'>Career</NavLink>
