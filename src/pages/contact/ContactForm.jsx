@@ -19,6 +19,13 @@ const ContactForm = () => {
       </div>
     );
   };
+
+  const validatePhoneNumber = (inputPhoneNumber) => {
+    // Regular expression pattern for xxx-xxx-xxxx format
+    const phoneNumberPattern = /^\d{3}-\d{3}-\d{4}$/;
+    return phoneNumberPattern.test(inputPhoneNumber);
+  };
+  
   const inputStyle =
     'block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6';
   return (
@@ -148,14 +155,13 @@ const ContactForm = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='block w-full rounded-md bg-red-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600'
+            className='block w-full rounded-md bg-red-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-800'
           >
             Submit
           </button>
         </div>
       </form>
     </div>
-    
   );
 };
 
