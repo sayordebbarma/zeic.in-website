@@ -20,7 +20,7 @@ const UploadFile = () => {
       setFileError('');
     } else {
       setSelectedFile(null);
-      setFileError('Invalid file size 10MB.');
+      setFileError('Invalid file type or size.');
     }
   };
 
@@ -31,8 +31,6 @@ const UploadFile = () => {
       'application/pdf',
       'application/msword',
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      'image/jpeg',
-      'image/jpg',
     ];
     const maxSize = 10 * 1024 * 1024; // 10MB in bytes
 
@@ -40,9 +38,7 @@ const UploadFile = () => {
       setSelectedFile(file);
       setFileError('');
     } else {
-      setFileError(
-        'Invalid file type or size. Please upload a PDF, DOC, or JPG file under 10MB.'
-      );
+      setFileError('Invalid file type or size.');
     }
   };
 
@@ -58,7 +54,7 @@ const UploadFile = () => {
   return (
     <>
       <div className='border-b border-gray-900/10 pb-12'>
-        <h2 className='text-xl font-semibold leading-7 text-gray-900'>
+        <h2 className='text-2xl font-semibold leading-7 text-red-600'>
           Upload Your Resume/CV
         </h2>
         <p className='mt-1 text-sm leading-6 text-gray-600'>
@@ -109,7 +105,7 @@ const UploadFile = () => {
               <p className='text-sm text-red-600 mt-2'>{fileError}</p>
             )}
             <p className='text-xs leading-5 text-gray-600'>
-              PDF, DOC, JPG up to 10MB
+              PDF or DOC up to 10MB
             </p>
           </div>
         </div>
@@ -117,48 +113,46 @@ const UploadFile = () => {
 
       {/* another style */}
       {/* <div className='col-span-full'>
-          <label
-            htmlFor='resume-upload'
-            className='block text-sm font-medium leading-6 text-gray-900'
-          >
-            <h2 className='text-xl font-semibold leading-7 text-gray-900'>
-              Upload Your Resume/CV
-            </h2>
-            <p className='mt-1 text-sm leading-6 text-gray-600'>
-              In PDF/DOC/JPG Format. Max File Size: 10MB
-            </p>
-          </label>
-          <div className='mt-2 flex justify-between items-center'>
-            <div className='relative flex items-center'>
-              <input
-                id='resume-upload'
-                name='resume-upload'
-                type='file'
-                className='sr-only'
-                accept='.pdf,.doc,.docx,.jpg,.jpeg'
-                onChange={handleFileChange}
-              />
-              <label
-                htmlFor='resume-upload'
-                className='cursor-pointer bg-white border border-gray-300 rounded-md px-3 py-1.5 text-sm leading-5 font-medium text-gray-900 shadow-sm hover:bg-gray-50'
+        <label
+          htmlFor='resume-upload'
+          className='block text-sm font-medium leading-6 text-gray-900'
+        >
+          <h2 className='text-xl font-semibold leading-7 text-gray-900'>
+            Upload Your Resume/CV
+          </h2>
+          <p className='mt-1 text-sm leading-6 text-gray-600'>
+            In PDF/DOC/JPG Format. Max File Size: 10MB
+          </p>
+        </label>
+        <div className='mt-2 flex justify-between items-center'>
+          <div className='relative flex items-center'>
+            <input
+              id='resume-upload'
+              name='resume-upload'
+              type='file'
+              className='sr-only'
+              accept='.pdf,.doc,.docx,.jpg,.jpeg'
+              onChange={handleFileChange}
+            />
+            <label
+              htmlFor='resume-upload'
+              className='cursor-pointer bg-white border border-gray-300 rounded-md px-3 py-1.5 text-sm leading-5 font-medium text-gray-900 shadow-sm hover:bg-gray-50'
+            >
+              {selectedFile ? selectedFile.name : 'Choose file'}
+            </label>
+            {selectedFile && (
+              <button
+                type='button'
+                className='ml-2 text-red-600 hover:text-red-800'
+                onClick={handleRemoveFile}
               >
-                {selectedFile ? selectedFile.name : 'Choose file'}
-              </label>
-              {selectedFile && (
-                <button
-                  type='button'
-                  className='ml-2 text-red-600 hover:text-red-800'
-                  onClick={handleRemoveFile}
-                >
-                  Remove
-                </button>
-              )}
-            </div>
-            <p className='text-xs leading-5 text-gray-600'>
-              Max File Size: 10MB
-            </p>
+                Remove
+              </button>
+            )}
           </div>
-        </div> */}
+          <p className='text-xs leading-5 text-gray-600'>Max File Size: 10MB</p>
+        </div>
+      </div> */}
     </>
   );
 };
