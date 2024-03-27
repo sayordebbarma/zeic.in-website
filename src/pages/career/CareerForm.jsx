@@ -1,9 +1,11 @@
-import UploadFile from './UploadFile';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function CareerForm() {
+  const formRef = useRef(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileError, setFileError] = useState('');
   const [selectedDepartments, setSelectedDepartments] = useState([]);
 
   // Define the departments array within the component scope
@@ -26,11 +28,64 @@ export default function CareerForm() {
     }
   };
 
+  const handleReset = () => {
+    formRef.current.reset(); // Reset the form using the ref
+    setSelectedDepartments([]); // Reset selected departments
+    setSelectedFile(null); // Clear selected file
+    setFileError(''); // Clear file error
+  };
+
+  //---------------------------Upload section-------------------------------------
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const allowedTypes = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    ];
+    const maxSize = 8 * 1024 * 1024; // 10MB in bytes
+
+    if (file && allowedTypes.includes(file.type) && file.size <= maxSize) {
+      setSelectedFile(file);
+      setFileError('');
+    } else {
+      setSelectedFile(null);
+      setFileError('Invalid file type or size.');
+    }
+  };
+
+  const handleFileDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    const allowedTypes = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    ];
+    const maxSize = 8 * 1024 * 1024; // 10MB in bytes
+
+    if (file && allowedTypes.includes(file.type) && file.size <= maxSize) {
+      setSelectedFile(file);
+      setFileError('');
+    } else {
+      setFileError('Invalid file type or size.');
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
+    setFileError('');
+  };
+
   const inputStyle =
     'block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6';
 
   return (
-    <form>
+    <form ref={formRef}>
       <div className='space-y-12 mx-8 my-6'>
         <div className='border-b border-gray-900/10 pb-12'>
           <h2 className='text-2xl font-semibold leading-7 text-red-600'>
@@ -225,7 +280,63 @@ export default function CareerForm() {
         </div>
 
         {/* upload */}
-        <UploadFile />
+        <div className='border-b border-gray-900/10 pb-12'>
+          <h2 className='text-2xl font-semibold leading-7 text-red-600'>
+            Upload Your Resume/CV
+          </h2>
+          <p className='mt-1 text-sm leading-6 text-gray-600'>
+            In PDF/DOC Format. Max File Size: 8MB
+          </p>
+          <div
+            className='mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10'
+            onDrop={handleFileDrop}
+            onDragOver={handleDragOver}
+          >
+            <div className='text-center'>
+              {!selectedFile ? (
+                <div className='mt-4 flex text-sm leading-6 text-gray-600'>
+                  <label
+                    htmlFor='file-upload'
+                    className='relative cursor-pointer rounded-md bg-white font-semibold text-red-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-red-600 focus-within:ring-offset-2 hover:text-red-800'
+                  >
+                    <span>Choose a file</span>
+                    <input
+                      id='file-upload'
+                      name='file-upload'
+                      type='file'
+                      accept='.pdf,.doc,.docx'
+                      className='sr-only'
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                  <p className='pl-1'>or drag and drop</p>
+                </div>
+              ) : (
+                <div className='mt-4 flex items-center justify-center'>
+                  <div className='flex items-center gap-2'>
+                    <p className='text-sm leading-6 text-gray-600 bg-white border px-1 py-0.5 rounded-md shadow-sm'>
+                      {/* bg-white border p-1 rounded-md shadow-sm */}
+                      {selectedFile.name}
+                    </p>
+                    <button
+                      type='button'
+                      className='text-red-600 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50'
+                      onClick={handleRemoveFile}
+                    >
+                      <FontAwesomeIcon icon={faXmark} className='h-full w-4' />
+                    </button>
+                  </div>
+                </div>
+              )}
+              {fileError && (
+                <p className='text-sm text-red-600 mt-2'>{fileError}</p>
+              )}
+              <p className='text-xs leading-5 text-gray-600'>
+                PDF or DOC up to 8MB
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* button */}
@@ -233,6 +344,7 @@ export default function CareerForm() {
         <button
           type='button'
           className='block w-96 text-gray-900 py-3 px-4 rounded-md font-semibold hover:bg-gray-200'
+          onClick={handleReset}
         >
           Reset
         </button>

@@ -31,7 +31,7 @@ const departments = [
 const CareerDesc = () => {
   return (
     <div
-      className='rounded-r-3xl my-6'
+      className='hidden md:block rounded-r-3xl my-6'
       style={{
         backgroundImage: `url(${AbstractBG})`,
         backgroundSize: 'cover',

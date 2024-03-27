@@ -12,14 +12,20 @@ function ProductsPage() {
     <>
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-700' />
-      <div className='flex flex-wrap flex-col'>
+      <div className='mt-32 flex flex-wrap flex-col'>
         <ProductCard productId={1} />
         <ProductCard productId={2} />
         <ProductCard productId={3} />
         <ProductCard productId={4} />
       </div>
       <Footer />
-      <ScrollToTop smooth className='bg-red-600 hover:bg-red-800' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
+      <ScrollToTop
+        smooth
+        className='bg-red-600 hover:bg-red-800'
+        component={
+          <FontAwesomeIcon icon={faArrowUp} style={{ color: '#ffffff' }} />
+        }
+      />
     </>
   );
 }
