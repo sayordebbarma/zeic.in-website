@@ -46,8 +46,10 @@ const ProductCard = ({ productId }) => {
     'hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full p-2 cursor-pointer z-10';
 
   return (
-    <div className='flex flex-col md:flex-row justify-center items-center mt-10'>
-      {/* For even product IDs, display images above details */}
+    <div className='flex flex-col md:flex-row justify-center items-center'>
+      {' '}
+      {/* mt-10 */}
+      {/* mt-10 For even product IDs, display images above details */}
       {isEven && (
         <div
           className='max-w-[600px] h-[500px] w-full m-auto py-16 px-4 relative group'
@@ -85,11 +87,9 @@ const ProductCard = ({ productId }) => {
           </div>
         </div>
       )}
-
       <div className='flex justify-center items-center w-full h-full z-10'>
-        <div className='w-3/4 rounded-xl p-8'>
+        <div className='w-3/4 rounded-xl m-4'>
           <h2 className='text-2xl font-bold'>{product.name}</h2>
-
           <ul className='list-disc'>
             <h1 className='font-bold text-md my-2'>Types: </h1>
             {product.types.map((type, index) => (
@@ -98,7 +98,6 @@ const ProductCard = ({ productId }) => {
               </li>
             ))}
           </ul>
-
           {Array.isArray(product.specifications) && (
             <ul className='list-disc'>
               <h1 className='font-bold text-md my-2'>Specifications: </h1>
@@ -111,7 +110,6 @@ const ProductCard = ({ productId }) => {
           )}
         </div>
       </div>
-
       {/* For odd product IDs, display images below details */}
       {!isEven && (
         <div
@@ -150,7 +148,6 @@ const ProductCard = ({ productId }) => {
           </div>
         </div>
       )}
-
       {/* Expanded image for even product */}
       {isImageExpanded && (
         <div
