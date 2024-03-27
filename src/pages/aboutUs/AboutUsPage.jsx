@@ -16,8 +16,8 @@ function AboutUsPage() {
       <Navbar navbarClassName='bg-gray-700' />
       <div className='flex flex-wrap flex-col'>
         <ImageCarousel />
-        <TeamSection/>
         <StatisticsSection />
+        <TeamSection/>
       </div>
       <Footer />
       <ScrollToTop smooth className='bg-red-600 hover:bg-red-800' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
