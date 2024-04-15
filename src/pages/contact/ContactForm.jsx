@@ -25,12 +25,12 @@ const ContactForm = () => {
     const phoneNumberPattern = /^\d{3}-\d{3}-\d{4}$/;
     return phoneNumberPattern.test(inputPhoneNumber);
   };
-  
+
   const inputStyle =
     'block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6';
   return (
-    <div className='isolate bg-white px-6 py-24 sm:py-32 lg:px-8'>
-      <div className='mx-full  text-center'>
+    <div className='mx-8 my-6'>
+      <div className='mx-full text-center'>
         {/* <div className='mt-2 text-lg leading-8 text-gray-600'>
           Aute magna irure deserunt veniam aliqua magna enim voluptate.
         </div> */}

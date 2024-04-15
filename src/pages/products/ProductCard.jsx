@@ -40,16 +40,17 @@ const ProductCard = ({ productId }) => {
 
   const isEven = productId % 2 === 0;
 
+  const containerStyle = isEven
+    ? 'flex flex-col md:flex-row'
+    : 'flex flex-col-reverse md:flex-row';
+
   const buttonStyleLeft =
-    'hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 left-5 text-2xl rounded-full p-2 cursor-pointer z-10';
+    'md:hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 left-5 text-2xl rounded-full md:p-2 cursor-pointer z-10';
   const buttonStyleRight =
-    'hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full p-2 cursor-pointer z-10';
+    'md:hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full md:p-2 cursor-pointer z-10';
 
   return (
-    <div className='flex flex-col md:flex-row justify-center items-center'>
-      {' '}
-      {/* mt-10 */}
-      {/* mt-10 For even product IDs, display images above details */}
+    <div className={`mx-20 ${containerStyle} justify-center items-center`}>
       {isEven && (
         <div
           className='max-w-[600px] h-[500px] w-full m-auto py-16 px-4 relative group'
@@ -87,7 +88,7 @@ const ProductCard = ({ productId }) => {
           </div>
         </div>
       )}
-      <div className='flex justify-center items-center w-full h-full z-10'>
+      <div className='flex justify-center items-center w-full h-full'>
         <div className='w-3/4 rounded-xl m-4'>
           <h2 className='text-2xl font-bold'>{product.name}</h2>
           <ul className='list-disc'>

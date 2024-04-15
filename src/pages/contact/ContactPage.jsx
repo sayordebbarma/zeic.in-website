@@ -9,7 +9,9 @@ const ContactPage = () => {
     <div>
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-700' />
-      <ContactForm />
+      <div className='mt-32 flex flex-wrap flex-col'>
+        <ContactForm />
+      </div>
       <Footer />
     </div>
   );

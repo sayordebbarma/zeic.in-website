@@ -75,22 +75,22 @@ const Footer = () => {
               ></iframe>
             </div>
 
-            <div className='flex mt-3 font-light'>
-              <FontAwesomeIcon className='mr-3' icon={faLocationDot} />
+            <div className='flex flex-col mt-3 font-light'>
               <p>
+                <FontAwesomeIcon className='mr-3' icon={faLocationDot} />
                 Hno. 138, Lane-6, Aoyim Village <br />
                 Nuiland Road, 4th Mile <br />
                 Chümoukedima, Nagaland : 797115
               </p>
+              <p className='flex mt-3 font-light'>
+                <FontAwesomeIcon className='mr-3' icon={faPhoneFlip} /> +91
+                7005521094/+91 9402696843
+              </p>
+              <p className='flex mt-3 font-light'>
+                <FontAwesomeIcon className='mr-3' icon={faEnvelope} />{' '}
+                zeicinfo@gmail.com
+              </p>
             </div>
-            <p className='flex mt-3 font-light'>
-              <FontAwesomeIcon className='mr-3' icon={faPhoneFlip} /> +91
-              7005521094/+91 9402696843
-            </p>
-            <p className='flex mt-3 font-light'>
-              <FontAwesomeIcon className='mr-3' icon={faEnvelope} />{' '}
-              zeicinfo@gmail.com
-            </p>
           </div>
         </div>
 
