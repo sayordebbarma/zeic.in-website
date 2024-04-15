@@ -1,5 +1,5 @@
 import React from 'react';
-import AbstractBG from '../../assets/images/background/abstract.png';
+import AbstractBG from '../../assets/images/background/abstract4.png';
 
 const departments = [
   {
