@@ -9,22 +9,22 @@ import test4 from '../../assets/images/products/zipSound/zs4.png';
 const cardData = [
   {
     title: 'Sound System Rental',
-    content: 'Here is some content for card 1. You can customize it as needed.',
+    content: 'Range: upto 1 lakh W',
     images: [test1, test2, test3, test4],
   },
   {
     title: 'Stage Rental',
-    content: 'Here is some content for card 2. You can customize it as needed.',
+    content: 'Range: upto 16,000 sq ft.',
     images: [test4, test1, test4, test1],
   },
   {
     title: 'Generator Rental',
-    content: 'Here is some content for card 3. You can customize it as needed.',
+    content: 'Range: 5-100 kVA',
     images: [test3, test2, test1, test1],
   },
   {
     title: 'Audio Engineering Course',
-    content: 'Here is some content for card 4. You can customize it as needed.',
+    content: 'Learn about Mixing, Equlization, Power Distribution, Amp Class Division and many more...',
     images: [test2, test3, test4, test1],
   },
 ];

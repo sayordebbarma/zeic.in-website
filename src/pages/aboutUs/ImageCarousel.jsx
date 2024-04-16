@@ -3,8 +3,10 @@ import demo1 from '../../assets/images/aboutUs/imgCarousel/demo1.png';
 import demo2 from '../../assets/images/aboutUs/imgCarousel/demo2.png';
 import demo3 from '../../assets/images/aboutUs/imgCarousel/demo3.png';
 import demo4 from '../../assets/images/aboutUs/imgCarousel/demo4.png';
+import demo5 from '../../assets/images/aboutUs/imgCarousel/demo5.png';
+import demo6 from '../../assets/images/aboutUs/imgCarousel/demo6.png';
 
-const images = [demo1, demo2, demo3, demo4];
+const images = [demo1, demo2, demo3, demo4, demo5, demo6];
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
