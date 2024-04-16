@@ -36,16 +36,16 @@ const Footer = () => {
           <div>
             <p className='font-semibold text-white'>Quick Link</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link to='/products' className={linkStyle}>
+              <Link smooth to='/products' className={linkStyle}>
                 Products
               </Link>
-              <Link to='/aboutus' className={linkStyle}>
+              <Link smooth to='/aboutus' className={linkStyle}>
                 About Us
               </Link>
-              <Link to='/career' className={linkStyle}>
+              <Link smooth to='/career' className={linkStyle}>
                 Career
               </Link>
-              <Link to='/contact' className={linkStyle}>
+              <Link smooth to='/contact' className={linkStyle}>
                 Contact
               </Link>
             </div>
@@ -53,10 +53,18 @@ const Footer = () => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Products</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link className={linkStyle}>Zip Sound</Link>
-              <Link className={linkStyle}>CNC Woodwork</Link>
-              <Link className={linkStyle}>ELC</Link>
-              <Link className={linkStyle}>Servo Stabilizer</Link>
+              <Link smooth to='/products' className={linkStyle}>
+                Zip Sound
+                </Link>
+              <Link smooth to='/products' className={linkStyle}>
+                CNC Woodwork
+                </Link>
+              <Link smooth to='/products' className={linkStyle}>
+                ELC
+                </Link>
+              <Link smooth to='/products' className={linkStyle}>
+                Servo Stabilizer
+                </Link>
             </div>
           </div>
 

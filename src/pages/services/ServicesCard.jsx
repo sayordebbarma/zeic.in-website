@@ -11,6 +11,7 @@ import stage2 from '../../assets/images/services/stage/Stage2.png';
 import stage3 from '../../assets/images/services/stage/Stage3.png';
 import stage4 from '../../assets/images/services/stage/Stage4.png';
 import course1 from '../../assets/images/services/courses/Course1.png';
+import course2 from '../../assets/images/services/courses/Course2.png';
 import test1 from '../../assets/images/products/zipSound/zs2.png';
 import test2 from '../../assets/images/products/zipSound/zs2.png';
 import test3 from '../../assets/images/products/zipSound/zs3.png';
@@ -35,7 +36,7 @@ const cardData = [
   {
     title: 'Audio Engineering Course',
     content: 'Here is some content for card 4. You can customize it as needed.',
-    images: [course1],
+    images: [course1, course2],
   },
 ];
 
