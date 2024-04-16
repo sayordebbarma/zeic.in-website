@@ -29,7 +29,7 @@ const cardData = [
   },
   {
     title: 'Generator Rental',
-    content: 'Here is some content for card 3. You can customize it as needed.',
+    content: 'Range: 5-100 kVA',
     images: [test3, test2, test1, test1],
   },
   {

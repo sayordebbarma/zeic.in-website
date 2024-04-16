@@ -3,7 +3,8 @@ import ContactHeader from '../../components/contactHeader/ContactHeader';
 import Navbar from '../../components/navbar/Navbar';
 import CareerForm from './CareerForm';
 import Footer from '../../components/footer/Footer';
-import CareerDesc from './CareerDesc';
+import ContactBG from '../../assets/images/background/careerBG.png';
+
 
 const CareerPage = () => {
   return (
@@ -11,7 +12,14 @@ const CareerPage = () => {
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-700' />
       <div className='mt-32 md:grid grid-cols-2'>
-        <CareerDesc />
+      <div
+      className='hidden md:block rounded-r-3xl my-6'
+      style={{
+        backgroundImage: `url(${ContactBG})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    ></div>
         <CareerForm />
       </div>
       <Footer />
