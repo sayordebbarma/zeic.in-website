@@ -61,10 +61,7 @@ const ServicesCard = () => {
   return (
     <div className='mx-8 my-6 grid justify-center md:grid-cols-2 gap-4'>
       {cardData.map((card, index) => (
-        <div
-          key={index}
-          className='bg-gray-800 border border-gray-200'
-        >
+        <div key={index} className='bg-gray-800 border border-gray-200'>
           <div className='relative w-full h-80 overflow-hidden'>
             {card.images.map((image, imgIndex) => (
               <img
@@ -243,88 +240,3 @@ const ServicesCard = () => {
 };
 
 export default ServicesCard;
-
-// import React, { useState, useEffect } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-// import test1 from '../../assets/images/products/zipSound/zs1.png';
-// import test2 from '../../assets/images/products/zipSound/zs2.png';
-// import test3 from '../../assets/images/products/zipSound/zs3.png';
-// import test4 from '../../assets/images/products/zipSound/zs4.png';
-
-// const cardData = [
-//   {
-//     title: 'Card 1',
-//     content:
-//       'Here is some content for card 1. You can customize it as needed.',
-//     images: [test1, test2, test3, test4],
-//   },
-//   {
-//     title: 'Card 2',
-//     content:
-//       'Here is some content for card 2. You can customize it as needed.',
-//     images: [test4, test1, test4, test1],
-//   },
-//   {
-//     title: 'Card 3',
-//     content:
-//       'Here is some content for card 2. You can customize it as needed.',
-//     images: [test2, test1, test2, test1],
-//   },
-//   {
-//     title: 'Card 4',
-//     content:
-//       'Here is some content for card 2. You can customize it as needed.',
-//     images: [test2, test3, test4, test1],
-//   },
-// ];
-
-// const ServicesCard = () => {
-//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-//   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % cardData[currentCardIndex].images.length);
-//       if (currentImageIndex === cardData[currentCardIndex].images.length - 1) {
-//         setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cardData.length);
-//       }
-//     }, 3000);
-
-//     return () => clearInterval(interval);
-//   }, [currentImageIndex, currentCardIndex]);
-
-//   return (
-//     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-8'>
-//       {cardData.map((card, index) => (
-//         <div
-//           key={index}
-//           className='max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'
-//         >
-//           <img
-//             className='rounded-t-lg'
-//             src={card.images[currentImageIndex]}
-//             alt=''
-//           />
-//           <div className='p-5'>
-//             <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
-//               {card.title}
-//             </h5>
-//             <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-//               {card.content}
-//             </p>
-//             <a
-//               href='#'
-//               className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-//             >
-//               Book now
-//               <FontAwesomeIcon icon={faArrowRight} />
-//             </a>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default ServicesCard;
