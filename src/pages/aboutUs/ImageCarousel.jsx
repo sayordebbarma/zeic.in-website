@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import demo1 from '../../assets/images/aboutUs/imgCarousel/demo1.png';
-import demo2 from '../../assets/images/aboutUs/imgCarousel/demo2.png';
-import demo3 from '../../assets/images/aboutUs/imgCarousel/demo3.png';
-import demo4 from '../../assets/images/aboutUs/imgCarousel/demo4.png';
-import demo5 from '../../assets/images/aboutUs/imgCarousel/demo5.png';
-import demo6 from '../../assets/images/aboutUs/imgCarousel/demo6.png';
+import Carousal1 from '../../assets/images/aboutUs/imgCarousel/Carousal1.png';
+import Carousal2 from '../../assets/images/aboutUs/imgCarousel/Carousal2.png';
+import Carousal3 from '../../assets/images/aboutUs/imgCarousel/Carousal3.png';
+import Carousal4 from '../../assets/images/aboutUs/imgCarousel/Carousal4.png';
+import Carousal5 from '../../assets/images/aboutUs/imgCarousel/Carousal5.png';
+import Carousal6 from '../../assets/images/aboutUs/imgCarousel/Carousal6.png';
 
-const images = [demo1, demo2, demo3, demo4, demo5, demo6];
+const images = [Carousal1, Carousal2, Carousal3, Carousal4, Carousal5, Carousal6];
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
