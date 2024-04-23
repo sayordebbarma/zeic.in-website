@@ -12,7 +12,8 @@ import cnc4 from '../assets/images/products/CNCWoodworks/cnc4.png';
 import cnc5 from '../assets/images/products/CNCWoodworks/cnc5.png';
 import cnc6 from '../assets/images/products/CNCWoodworks/cnc6.png';
 import cnc7 from '../assets/images/products/CNCWoodworks/cnc7.png';
-import elc1 from '../assets/images/products/elc/elc.png';
+import elc1 from '../assets/images/products/elc/elc1.png';
+import elc2 from '../assets/images/products/elc/elc2.png';
 import servo1 from '../assets/images/products/servoStabilizer/servoStabilizer1.png';
 
 export const products = [
@@ -61,7 +62,7 @@ export const products = [
       'Power: 5kW to 250kW',
       'Weight: 1.5 kgs',
     ],
-    images: [elc1],
+    images: [elc1, elc2],
   },
   {
     id: 4,

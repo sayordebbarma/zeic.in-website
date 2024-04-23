@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faPhoneFlip,
+  faPhone,
   faLocationDot,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
@@ -83,7 +83,7 @@ const Footer = () => {
                 Chümoukedima, Nagaland : 797115
               </p>
               <p className='flex mt-3 font-light'>
-                <FontAwesomeIcon className='mr-3' icon={faPhoneFlip} /> +91
+                <FontAwesomeIcon className='mr-3' icon={faPhone} /> +91
                 7005521094/+91 9402696843
               </p>
               <p className='flex mt-3 font-light'>

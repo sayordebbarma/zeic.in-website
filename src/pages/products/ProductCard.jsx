@@ -72,7 +72,7 @@ const ProductCard = ({ productId }) => {
                   handlePrev();
                   e.stopPropagation();
                 }}
-                className='size-6'
+                className='size-8'
               />
             </div>
             <div className={`${buttonStyleRight}`}>
@@ -82,13 +82,13 @@ const ProductCard = ({ productId }) => {
                   handleNext();
                   e.stopPropagation();
                 }}
-                className='size-6'
+                className='size-8'
               />
             </div>
           </div>
         </div>
       )}
-      <div className='flex justify-center items-center w-full h-full'>
+      <div className='flex justify-center items-center w-full h-full bg-gray-100 rounded-lg py-4'>
         <div className='w-3/4 rounded-xl m-4'>
           <h2 className='text-2xl font-bold'>{product.name}</h2>
           <ul className='list-disc'>
@@ -133,7 +133,7 @@ const ProductCard = ({ productId }) => {
                   handlePrev();
                   e.stopPropagation();
                 }}
-                className='size-6'
+                className='size-8'
               />
             </div>
             <div className={`${buttonStyleRight}`}>
@@ -143,7 +143,7 @@ const ProductCard = ({ productId }) => {
                   handleNext();
                   e.stopPropagation();
                 }}
-                className='size-6'
+                className='size-8'
               />
             </div>
           </div>

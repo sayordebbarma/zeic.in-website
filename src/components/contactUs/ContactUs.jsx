@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faPhoneFlip,
+  faPhone,
   faLocationDot,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
@@ -83,7 +83,7 @@ const ContactUs = () => {
               }
             />
             <ContactInfo
-              icon={faPhoneFlip}
+              icon={faPhone}
               text={
                 <>
                   +91 7005521094 <br /> +91 9402696843
