@@ -8,14 +8,26 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import zeicLogo from '../../assets/images/logo/zeic_logo.png';
 
-const Footer = () => {
+const Footer = ({ productRefs }) => {
   const currentYear = new Date().getFullYear();
   const linkStyle =
     'transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-red-500';
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToProduct = (productId) => {
+    const productRef = productRefs[productId - 1];
+    if (productRef && productRef.current) {
+      productRef.current.scrollIntoView({behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className='bg-gray-800 text-white'>
       <div className='container px-6 py-12 mx-auto'>
-        <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-5'>
+        <div className='grid grid-cols-2 gap-6 sm:gap-y-10 lg:grid-cols-6'>
           <div className='font-light sm:col-span-2'>
             <img
               className='h-20 lg:mx-[-20px]'
@@ -32,20 +44,25 @@ const Footer = () => {
               <br /> and Development zipped under one roof
             </p>
           </div>
-
           <div>
             <p className='font-semibold text-white'>Quick Link</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link to='/products' className={linkStyle}>
+              <Link to='/' className={linkStyle} onClick={scrollToTop}>
+                Home
+              </Link>
+              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
                 Products
               </Link>
-              <Link to='/aboutus' className={linkStyle}>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+                Services
+              </Link>
+              <Link to='/aboutus' className={linkStyle} onClick={scrollToTop}>
                 About Us
               </Link>
-              <Link to='/career' className={linkStyle}>
+              <Link to='/career' className={linkStyle} onClick={scrollToTop}>
                 Career
               </Link>
-              <Link to='/contact' className={linkStyle}>
+              <Link to='/contact' className={linkStyle} onClick={scrollToTop}>
                 Contact
               </Link>
             </div>
@@ -53,13 +70,21 @@ const Footer = () => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Products</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link className={linkStyle}>Zip Sound</Link>
-              <Link className={linkStyle}>CNC Woodwork</Link>
-              <Link className={linkStyle}>ELC</Link>
-              <Link className={linkStyle}>Servo Stabilizer</Link>
+              <Link className={linkStyle} onClick={() => scrollToProduct(1)}>Zip Sound</Link>
+              <Link className={linkStyle} onClick={() => scrollToProduct(2)}>CNC Woodwork</Link>
+              <Link className={linkStyle} onClick={() => scrollToProduct(3)}>ELC</Link>
+              <Link className={linkStyle} onClick={() => scrollToProduct(4)}>Servo Stabilizer</Link>
             </div>
           </div>
-
+          <div className='lg:mx-[-50px]'>
+            <p className='font-semibold text-white'>Services</p>
+            <div className='flex flex-col items-start mt-5 space-y-2'>
+              <Link className={linkStyle}>Sound System Rental</Link>
+              <Link className={linkStyle}>Stage Rental</Link>
+              <Link className={linkStyle}>Generator Rental</Link>
+              <Link className={linkStyle}>Audio Engineering Course</Link>
+            </div>
+          </div>
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Contact Us</p>
 
@@ -101,7 +126,7 @@ const Footer = () => {
             reserved.
           </p>
           <p className='p-8 font-light text-start md:text-center md:text-sm md:p-4'>
-            Designed by Sayor Debbarma
+            Designed by Sayor & Tushi
           </p>
         </div>
       </div>

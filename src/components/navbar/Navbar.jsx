@@ -32,6 +32,10 @@ const Navbar = ({ navbarClassName }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div
       className={`w-full px-4 fixed top-12 z-20 ${navbarClassName} ${
@@ -51,33 +55,33 @@ const Navbar = ({ navbarClassName }) => {
             <NavLink
               exact={true ? 'true' : undefined}
               to='/'
-              className={getNavLinkClass('/')}
+              className={getNavLinkClass('/')} onClick={scrollToTop}
             >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to='/products' className={getNavLinkClass('/products')}>
+            <NavLink to='/products' className={getNavLinkClass('/products')} onClick={scrollToTop}>
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink to='/services' className={getNavLinkClass('/services')}>
+            <NavLink to='/services' className={getNavLinkClass('/services')} onClick={scrollToTop}>
               Services
             </NavLink>
           </li>
           <li>
-            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')}>
+            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')} onClick={scrollToTop}>
               About us
             </NavLink>
           </li>
           <li>
-            <NavLink to='/career' className={getNavLinkClass('/career')}>
+            <NavLink to='/career' className={getNavLinkClass('/career')} onClick={scrollToTop}>
               Career
             </NavLink>
           </li>
           <li>
-            <NavLink to='/contact' className={getNavLinkClass('/contact')}>
+            <NavLink to='/contact' className={getNavLinkClass('/contact')} onClick={scrollToTop}>
               Contact
             </NavLink>
           </li>
@@ -106,22 +110,22 @@ const Navbar = ({ navbarClassName }) => {
           {/* flex flex-col */}
           <ul>
             <li className='border-b'>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/' onClick={scrollToTop}>Home</NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/products'>Products</NavLink>
+              <NavLink to='/products' onClick={scrollToTop}>Products</NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/services'>Services</NavLink>
+              <NavLink to='/services' onClick={scrollToTop}>Services</NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/aboutus'>About us</NavLink>
+              <NavLink to='/aboutus' onClick={scrollToTop}>About us</NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/career'>Career</NavLink>
+              <NavLink to='/career' onClick={scrollToTop}>Career</NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/contact'>Contact</NavLink>
+              <NavLink to='/contact' onClick={scrollToTop}>Contact</NavLink>
             </li>
           </ul>
         </div>
