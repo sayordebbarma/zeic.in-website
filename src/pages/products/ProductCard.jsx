@@ -50,7 +50,7 @@ const ProductCard = ({ productId }) => {
     'md:hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full md:p-2 cursor-pointer z-10';
 
   return (
-    <div className={`mx-20 mt-1 mb-10 lg:m-20 md:m-10 ${containerStyle} justify-center items-center`}>
+    <div className={`mx-20 ${containerStyle} justify-center items-center`}>
       {isEven && (
         <div
           className='max-w-[600px] h-[500px] w-full m-auto py-16 px-4 relative group'
