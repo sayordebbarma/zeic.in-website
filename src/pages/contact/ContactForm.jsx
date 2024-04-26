@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPhone,
   faLocationDot,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        'http://localhost:3001/send-email',
+        formData
+      );
+      console.log('Email response:', response.data);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
+
   const ContactInfo = ({ icon, text }) => {
     return (
       <div className='flex items-center text-red-600'>
@@ -60,11 +90,7 @@ const ContactForm = () => {
         </div>
       </div>
 
-      <form
-        action='#'
-        method='POST'
-        className='mx-auto mt-16 max-w-xl sm:mt-20'
-      >
+      <form onSubmit={handleSubmit} className='mx-auto mt-16 max-w-xl sm:mt-20'>
         <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
           <div>
             <label
