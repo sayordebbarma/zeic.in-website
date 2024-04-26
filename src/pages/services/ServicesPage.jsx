@@ -7,7 +7,7 @@ import ScrollToTop from 'react-scroll-to-top';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
-const Services = () => {
+const ServicesPage = () => {
   return (
     <>
     <ContactHeader />
@@ -27,4 +27,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default ServicesPage
