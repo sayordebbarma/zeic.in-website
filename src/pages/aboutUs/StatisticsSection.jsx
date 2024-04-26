@@ -10,7 +10,7 @@ const StatisticsSection = () => {
             <p className='leading-relaxed text-red-600'>Products</p>
           </div>
           <div className='p-4 sm:w-1/4 w-1/2 lg:border-r border-gray-300'>
-            <h2 className='title-font font-medium sm:text-4xl text-3xl'>10</h2>
+            <h2 className='title-font font-medium sm:text-4xl text-3xl'>4</h2>
             <p className='leading-relaxed text-red-600'>Services</p>
           </div>
           <div className='p-4 sm:w-1/4 w-1/2 lg:border-r border-gray-300'>

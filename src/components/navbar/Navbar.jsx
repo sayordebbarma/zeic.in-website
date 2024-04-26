@@ -61,6 +61,11 @@ const Navbar = ({ navbarClassName }) => {
             </NavLink>
           </li>
           <li>
+            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')} onClick={scrollToTop}>
+              About us
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/products' className={getNavLinkClass('/products')} onClick={scrollToTop}>
               Products
             </NavLink>
@@ -68,11 +73,6 @@ const Navbar = ({ navbarClassName }) => {
           <li>
             <NavLink to='/services' className={getNavLinkClass('/services')} onClick={scrollToTop}>
               Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')} onClick={scrollToTop}>
-              About us
             </NavLink>
           </li>
           <li>

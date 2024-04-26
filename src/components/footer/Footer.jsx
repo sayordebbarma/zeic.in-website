@@ -113,7 +113,7 @@ const Footer = ({ productRefs }) => {
               </p>
               <p className='flex mt-3 font-light'>
                 <FontAwesomeIcon className='mr-3' icon={faEnvelope} />{' '}
-                zeicinfo@gmail.com
+                info@zeic.in
               </p>
             </div>
           </div>

@@ -100,7 +100,7 @@ const ServicesCard = () => {
   return (
     <div className='mx-8 my-6 grid justify-center md:grid-cols-2 gap-4'>
       {cardData.map((card, index) => (
-        <div key={index} className='bg-gray-100 border border-gray-200'>
+        <div key={index} className='bg-gray-100 border border-gray-100 shadow-xl'>
           <div className='relative w-full h-80 overflow-hidden'>
             {card.images.map((image, imgIndex) => (
               <img

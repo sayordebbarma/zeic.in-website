@@ -92,7 +92,7 @@ const ContactUs = () => {
             />
             <ContactInfo
               icon={faEnvelope}
-              text={<span>example@email.com</span>}
+              text={<span>info@zeic.in</span>}
             />
           </div>
         </div>
