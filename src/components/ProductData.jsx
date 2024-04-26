@@ -23,14 +23,14 @@ export const products = [
     description:
       'Elite in-house public address speakers. Experience world-class audio quality and precision. Ideal for stadiums, theaters, and events, ensuring crystal-clear sound for an immersive and memorable auditory experience',
     types: [
-      'High Speakers: Experience crystal-clear highs that bring out the nuances in your music.',
-      'Mid Speakers: Enjoy well-defined midrange frequencies that enhance vocals and instrumentals.',
-      'Low Speakers: Feel the deep, rich bass that adds power to your audio experience.',
-      'Subwoofers: Immerse yourself in heart-thumping bass, elevating every beat.',
-      'Line Array Speakers: Perfect for large venues, delivering consistent sound coverage.',
-      'Monitor Speakers: Precision audio monitoring for recording studios and professional setups.',
+      'High Speakers: Reproduce high frequencies.',
+      'Mid Speakers: Handle mid-range frequencies, like vocals and instruments.',
+      'Low Speakers: Produce low-frequency sounds, such as bass tones.',
+      'Subwoofers:  Specialized for deep bass reproduction.',
+      'Line Array Speakers: Multiple drivers arranged for even sound dispersion.',
+      'Monitor Speakers: Provide accurate, flat frequency response for audio production.',
     ],
-    specifications: ['powerRange: 300 W - 4000 W'],
+    specifications: ['Power Range: 300 W - 4000 W'],
     images: [zs1, zs2, zs3, zs4, zs5, zs6, zs7],
   },
   {
@@ -59,7 +59,7 @@ export const products = [
       'Digital ELC: Digital electronic load control utilizes digital technology, such as microcontrollers or digital signal processors (DSPs), to manage and regulate electrical loads.',
     ],
     specifications: [
-      'Power: 5kW to 250kW',
+      'Power Range: 5kW to 250kW',
       'Weight: 1.5 kgs',
     ],
     images: [elc1, elc2],

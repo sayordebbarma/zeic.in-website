@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar';
-import homebg from '../../assets/images/background/homeBG.png';
+import homebg from '../../assets/images/background/homebg.png';
 
 const heroSection = () => {
   return (

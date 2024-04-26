@@ -90,20 +90,20 @@ const ProductCard = ({ productId }) => {
       )}
       <div className='flex justify-center items-center w-full h-full bg-gray-100 rounded-lg py-4'>
         <div className='w-3/4 rounded-xl m-4'>
-          <h2 className='text-2xl font-bold'>{product.name}</h2>
+          <h2 className='text-3xl font-bold text-gray-800'>{product.name.toUpperCase()}</h2>
           <ul className='list-disc'>
-            <h1 className='font-bold text-md my-2'>Types: </h1>
+            <h1 className='font-bold text-l mt-4 text-gray-800'>TYPES: </h1>
             {product.types.map((type, index) => (
-              <li key={index} className='text-sm p-0'>
+              <li key={index} className='text-md p-0 text-gray-600'>
                 {type}
               </li>
             ))}
           </ul>
           {Array.isArray(product.specifications) && (
             <ul className='list-disc'>
-              <h1 className='font-bold text-md my-2'>Specifications: </h1>
+              <h1 className='font-bold text-l mt-4 text-gray-800'>SPECIFICATIONS: </h1>
               {product.specifications.map((specification, index) => (
-                <li key={index} className='text-sm p-0'>
+                <li key={index} className='text-md p-0 text-gray-600'>
                   {specification}
                 </li>
               ))}
