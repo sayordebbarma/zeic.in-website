@@ -11,6 +11,7 @@ import stage2 from '../../assets/images/services/stage/Stage2.png';
 import stage3 from '../../assets/images/services/stage/Stage3.png';
 import stage4 from '../../assets/images/services/stage/Stage4.png';
 import course1 from '../../assets/images/services/courses/Course1.png';
+import course2 from '../../assets/images/services/courses/Course2.png';
 import test1 from '../../assets/images/products/zipSound/zs2.png';
 import test2 from '../../assets/images/products/zipSound/zs2.png';
 import test3 from '../../assets/images/products/zipSound/zs3.png';
@@ -19,12 +20,12 @@ import test4 from '../../assets/images/products/zipSound/zs4.png';
 const cardData = [
   {
     title: 'Sound System Rental',
-    content: 'Here is some content for card 1. You can customize it as needed.',
+    content: 'Range: Upto 1 Lakh W',
     images: [sound1, sound2, sound3, sound4],
   },
   {
     title: 'Stage Rental',
-    content: 'Here is some content for card 2. You can customize it as needed.',
+    content: 'Range: Upto 16,000 sq. ft',
     images: [stage1, stage2, stage3, stage4],
   },
   {
@@ -34,8 +35,8 @@ const cardData = [
   },
   {
     title: 'Audio Engineering Course',
-    content: 'Here is some content for card 4. You can customize it as needed.',
-    images: [course1],
+    content: 'Courses for Mixing, Equilization, Power Distribution, Amp class division and many more...',
+    images: [course1, course2],
   },
 ];
 

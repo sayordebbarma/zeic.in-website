@@ -8,7 +8,7 @@ const ContactPage = () => {
   return (
     <div>
       <ContactHeader />
-      <Navbar navbarClassName='bg-gray-700' />
+      <Navbar navbarClassName='bg-gray-800' />
       <div className='mt-32 flex flex-wrap flex-col'>
         <ContactForm />
       </div>

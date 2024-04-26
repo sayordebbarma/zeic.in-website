@@ -13,7 +13,7 @@ function AboutUsPage() {
   return (
     <>
       <ContactHeader />
-      <Navbar navbarClassName='bg-gray-700' />
+      <Navbar navbarClassName='bg-gray-800' />
       <div className='flex flex-wrap flex-col'>
         <ImageCarousel />
         <StatisticsSection />

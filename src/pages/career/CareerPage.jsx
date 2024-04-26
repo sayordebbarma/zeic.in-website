@@ -10,7 +10,7 @@ const CareerPage = () => {
   return (
     <>
       <ContactHeader />
-      <Navbar navbarClassName='bg-gray-700' />
+      <Navbar navbarClassName='bg-gray-800' />
       <div className='mt-32 md:grid grid-cols-2'>
       <div
       className='hidden md:block rounded-r-3xl my-6'

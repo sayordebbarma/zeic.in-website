@@ -70,19 +70,19 @@ const Footer = ({ productRefs }) => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Products</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link className={linkStyle} onClick={() => scrollToProduct(1)}>Zip Sound</Link>
-              <Link className={linkStyle} onClick={() => scrollToProduct(2)}>CNC Woodwork</Link>
-              <Link className={linkStyle} onClick={() => scrollToProduct(3)}>ELC</Link>
-              <Link className={linkStyle} onClick={() => scrollToProduct(4)}>Servo Stabilizer</Link>
+              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(1)}>Zip Sound</Link>
+              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(2)}>CNC Woodwork</Link>
+              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(3)}>ELC</Link>
+              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(4)}>Servo Stabilizer</Link>
             </div>
           </div>
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Services</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link className={linkStyle}>Sound System Rental</Link>
-              <Link className={linkStyle}>Stage Rental</Link>
-              <Link className={linkStyle}>Generator Rental</Link>
-              <Link className={linkStyle}>Audio Engineering Course</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Sound System Rental</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Stage Rental</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Generator Rental</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Audio Engineering Course</Link>
             </div>
           </div>
           <div className='lg:mx-[-50px]'>
