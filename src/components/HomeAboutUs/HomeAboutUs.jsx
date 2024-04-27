@@ -4,6 +4,10 @@ import Timeline from '../timeline/timeline';
 import InnovatorImg from '../../assets/images/Innovator/Innovator_img.png';
 
 const HomeAboutUs = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   return (
     <div className='container mx-auto m-8'>
       <h1 className='text-5xl font-bold text-center text-gray-800 my-10'>
@@ -50,6 +54,7 @@ const HomeAboutUs = () => {
             <Link
               to='/aboutus'
               className='text-red-600 hover:underline block mt-4'
+              onClick={scrollToTop}
             >
               Learn More
             </Link>
