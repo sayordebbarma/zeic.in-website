@@ -6,8 +6,11 @@ import {
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { Dialog } from '@headlessui/react';
 
 const ContactForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -28,12 +31,14 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:3001/send-email',
+        'http://localhost:500/send-email',
         formData
       );
       console.log('Email response:', response.data);
+      setSubmitted(true); // Set submitted state to true on successful email send
     } catch (error) {
       console.error('Error sending email:', error);
+      setSubmitError('Failed to submit the form. Please try again later.');
     }
   };
 
@@ -61,9 +66,6 @@ const ContactForm = () => {
   return (
     <div className='mx-8 my-6'>
       <div className='mx-full text-center'>
-        {/* <div className='mt-2 text-lg leading-8 text-gray-600'>
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
-        </div> */}
         <div className='mt-2 text-gray-600 flex flex-row justify-evenly'>
           <ContactInfo
             icon={faLocationDot}
@@ -94,7 +96,7 @@ const ContactForm = () => {
         <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
           <div>
             <label
-              htmlFor='first-name'
+              htmlFor='firstName'
               className='block text-sm font-semibold leading-6 text-gray-900'
             >
               First name
@@ -102,10 +104,11 @@ const ContactForm = () => {
             <div className='mt-2.5'>
               <input
                 type='text'
-                name='first-name'
-                id='first-name'
+                name='firstName'
+                id='firstName'
                 autoComplete='given-name'
                 className={inputStyle}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -119,10 +122,11 @@ const ContactForm = () => {
             <div className='mt-2.5'>
               <input
                 type='text'
-                name='last-name'
+                name='lastName'
                 id='last-name'
                 autoComplete='family-name'
                 className={inputStyle}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -140,6 +144,7 @@ const ContactForm = () => {
                 id='email'
                 autoComplete='email'
                 className={inputStyle}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -153,10 +158,11 @@ const ContactForm = () => {
             <div className='relative mt-2.5'>
               <input
                 type='tel'
-                name='phone-number'
+                name='phoneNumber'
                 id='phone-number'
                 autoComplete='tel'
                 className={inputStyle}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -174,6 +180,7 @@ const ContactForm = () => {
                 rows={4}
                 className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6 resize-none'
                 defaultValue={''}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -187,6 +194,32 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
+
+      {/* Dialog pop-up for submit message */}
+      <Dialog
+        open={submitted}
+        onClose={() => setSubmitted(false)}
+        className='fixed inset-0 z-50 overflow-y-auto'
+      >
+        <div className='fixed inset-0 z-0 bg-black opacity-50'></div>{' '}
+        {/* Overlay */}
+        <div className='flex justify-center items-center min-h-screen'>
+          <div className='bg-white border border-gray-300 rounded-lg p-8 max-w-md w-full z-10'>
+            <Dialog.Title className='text-2xl font-bold text-red-500 mb-4'>
+              Submitted Successfully!
+            </Dialog.Title>
+            <p className='text-gray-600'>
+              Thank you for reaching out to us. We will get back to you soon.
+            </p>
+            <button
+              className='block w-full bg-red-600 text-white font-semibold py-3 mt-6 rounded-md shadow-sm hover:bg-red-800'
+              onClick={() => setSubmitted(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </Dialog>
     </div>
   );
 };
