@@ -26,7 +26,7 @@ const Footer = ({ productRefs }) => {
 
   return (
     <footer className='bg-gray-800 text-white'>
-      <div className='container px-6 py-12 mx-auto'>
+      <div className='container px-6 pt-12 mx-auto'>
         <div className='grid grid-cols-2 gap-6 sm:gap-y-10 lg:grid-cols-6'>
           <div className='font-light sm:col-span-2'>
             <img
@@ -119,13 +119,13 @@ const Footer = ({ productRefs }) => {
           </div>
         </div>
 
-        <hr className='my-6 md:my-8 border-white h-1' />
-        <div className='flex justify-between'>
-          <p className='p-8 font-light text-start md:text-center md:text-sm md:p-4'>
+        <hr className='my-2 md:mt-6 border-white h-1' />
+        <div className='flex justify-between p-8 font-light text-start md:text-center md:text-sm md:p-4'>
+          <p className=''>
             &copy; {currentYear} Zip Engineering & Innovation Centre. All rights
             reserved.
           </p>
-          <p className='p-8 font-light text-start md:text-center md:text-sm md:p-4'>
+          <p className=''>
             Designed by Sayor & Tushi
           </p>
         </div>

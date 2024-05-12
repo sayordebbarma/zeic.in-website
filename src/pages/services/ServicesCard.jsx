@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTimes } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import { Dialog } from '@headlessui/react';
 
 import sound1 from '../../assets/images/services/soundSystem/Sound1.png';
 import sound2 from '../../assets/images/services/soundSystem/Sound2.png';
@@ -45,6 +47,8 @@ const ServicesCard = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,10 +72,6 @@ const ServicesCard = () => {
     setIsDialogOpen(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   // ------------form section--------------
 
   const [formData, setFormData] = useState({
@@ -93,6 +93,21 @@ const ServicesCard = () => {
       ...prevData,
       [name]: fieldValue,
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        'http://localhost:500/service-mail',
+        formData
+      );
+      console.log('Email response:', response.data);
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitError('Failed to submit the form. Please try again later.');
+    }
   };
 
   const inputStyle =
@@ -160,8 +175,8 @@ const ServicesCard = () => {
                       id='service'
                       name='serviceType'
                       value={formData.serviceType}
-                      onChange={handleChange}
                       className={inputStyle}
+                      onChange={handleChange}
                     >
                       <option value='' disabled selected>
                         Select the service
@@ -186,8 +201,8 @@ const ServicesCard = () => {
                       type='text'
                       id='fullName'
                       name='fullName'
-                      onChange={handleChange}
                       className={inputStyle}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -204,6 +219,7 @@ const ServicesCard = () => {
                       id='email'
                       name='email'
                       className={inputStyle}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -220,6 +236,7 @@ const ServicesCard = () => {
                       id='phoneNumber'
                       name='phoneNumber'
                       className={inputStyle}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -236,6 +253,7 @@ const ServicesCard = () => {
                       id='dateTime'
                       name='dateTime'
                       className={inputStyle}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -252,6 +270,7 @@ const ServicesCard = () => {
                       id='duration'
                       name='duration'
                       className={inputStyle}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -268,6 +287,7 @@ const ServicesCard = () => {
                       id='location'
                       name='location'
                       className={inputStyle}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -285,6 +305,7 @@ const ServicesCard = () => {
                       rows='3'
                       className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6 resize-none'
                       defaultValue={''}
+                      onChange={handleChange}
                     ></textarea>
                   </div>
                 </div>
@@ -299,6 +320,33 @@ const ServicesCard = () => {
               </div>
             </form>
           </div>
+
+          {/* Dialog pop-up for submit message */}
+          <Dialog
+            open={submitted}
+            onClose={() => setSubmitted(false)}
+            className='fixed inset-0 z-50 overflow-y-auto'
+          >
+            <div className='fixed inset-0 z-0 bg-black opacity-50'></div>{' '}
+            {/* Overlay */}
+            <div className='flex justify-center items-center min-h-screen'>
+              <div className='bg-white border border-gray-300 rounded-lg p-8 max-w-md w-full z-10'>
+                <Dialog.Title className='text-2xl font-bold text-red-500 mb-4'>
+                  Submitted Successfully!
+                </Dialog.Title>
+                <p className='text-gray-600'>
+                  Thank you for reaching out to us. We will get back to you
+                  soon.
+                </p>
+                <button
+                  className='block w-full bg-red-600 text-white font-semibold py-3 mt-6 rounded-md shadow-sm hover:bg-red-800'
+                  onClick={() => setSubmitted(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </Dialog>
         </div>
       )}
     </div>
