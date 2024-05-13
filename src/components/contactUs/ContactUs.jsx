@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPhone,
@@ -102,7 +102,7 @@ const ContactUs = () => {
         </div>
 
         <div className='lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0'>
-          <form onSubmit={handleSubmit} className='max-w-xl'>
+          <form onSubmit={handleSubmit}> {/* className='max-w-xl' */}
             <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
               <div>
                 <label

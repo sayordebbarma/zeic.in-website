@@ -14,14 +14,14 @@ const HomeAboutUs = () => {
         About Us
       </h1>
 
-      <div className='flex flex-col justify-center lg:flex-row items-center md:m-4 lg:m-8'>
+      <div className='flex flex-col justify-between lg:flex-row items-center md:m-4 lg:m-8'>
         <div
-          className='relative sm:w-2/3 lg:w-1/5 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
+          className='relative w-96 md:w-2/3 lg:w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
           style={{ boxShadow: '10px 10px', padding: '0' }}
         >
           <img src={InnovatorImg} alt='The Innovator Img' />
         </div>
-        <div className='md:w-2/3 h-full sm:mt-8 lg:ml-8'>
+        <div className='lg:w-2/3 h-full m-8'>
           <div className='bg-gray-100 p-6 rounded-tr-3xl rounded-bl-3xl shadow-xl h-full'>
             <h3 className='font-semibold md:font-bold mb-4 lg:text-lg'>
               The Innovator:
