@@ -7,6 +7,7 @@ import {
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import zeicLogo from '../../assets/images/logo/zeic_logo.png';
+import CompanyLocation from '../CompanyLocation';
 
 const Footer = ({ productRefs }) => {
   const currentYear = new Date().getFullYear();
@@ -82,23 +83,14 @@ const Footer = ({ productRefs }) => {
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>Sound System Rental</Link>
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>Stage Rental</Link>
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>Generator Rental</Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Audio Engineering Course</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Audio Engr Course</Link>
             </div>
           </div>
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Contact Us</p>
-
-            <div style={{ width: '100%' }} className='mt-5'>
-              <iframe
-                width='300'
-                height='100'
-                frameborder='0'
-                scrolling='no'
-                marginheight='0'
-                marginwidth='0'
-                src='https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=near&amp;output=embed'
-              ></iframe>
-            </div>
+            
+            {/* Map location of the company */}
+            <CompanyLocation />
 
             <div className='flex flex-col mt-3 font-light'>
               <p>
