@@ -83,7 +83,7 @@ const Footer = ({ productRefs }) => {
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>Sound System Rental</Link>
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>Stage Rental</Link>
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>Generator Rental</Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Audio Engr Course</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Courses</Link>
             </div>
           </div>
           <div className='lg:mx-[-50px]'>
@@ -105,20 +105,20 @@ const Footer = ({ productRefs }) => {
               </p>
               <p className='flex mt-3 font-light'>
                 <FontAwesomeIcon className='mr-3' icon={faEnvelope} />{' '}
-                zeicinfo@gmail.com
+                info@zeic.in
               </p>
             </div>
           </div>
         </div>
 
-        <hr className='my-2 md:mt-6 border-white h-1' />
-        <div className='flex justify-between p-8 font-light text-start md:text-center md:text-sm md:p-4'>
-          <p className=''>
+        <hr className='my-2 mt-6 border-white h-1' />
+        <div className='flex flex-col md:flex-row justify-between py-4 font-light text-start md:text-center md:text-sm md:p-4'>
+          <p className='mb-2'>
             &copy; {currentYear} Zip Engineering & Innovation Centre. All rights
             reserved.
           </p>
-          <p className=''>
-            Designed by Sayor & Tushi
+          <p>
+            Designed by  <Link to= '' className='underline text-red-600 hover:text-red-700'>Sayor Jamir</Link> & <Link to= '' className='underline text-red-600 hover:text-red-700'>Tushienla Jamir</Link>
           </p>
         </div>
       </div>

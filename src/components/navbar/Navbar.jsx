@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import zeicLogo from '../../assets/images/logo/zeic_logo.png';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -45,10 +45,10 @@ const Navbar = ({ navbarClassName }) => {
       }`}
     >
       <div className='flex justify-between items-center w-full h-20 m-auto text-white'>
-        <div className='flex items-center'>
+        <Link to='/' onClick={scrollToTop} className='flex items-center'>
           <img className='h-20' src={zeicLogo} alt='zeic logo' />
           <h1 className='text-3xl font-bold ml-2'>ZEIC</h1>
-        </div>
+        </Link>
         {/* Desktop view */}
         <ul className='hidden md:flex'>
           <li>
@@ -61,6 +61,11 @@ const Navbar = ({ navbarClassName }) => {
             </NavLink>
           </li>
           <li>
+            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')} onClick={scrollToTop}>
+              About us
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/products' className={getNavLinkClass('/products')} onClick={scrollToTop}>
               Products
             </NavLink>
@@ -68,11 +73,6 @@ const Navbar = ({ navbarClassName }) => {
           <li>
             <NavLink to='/services' className={getNavLinkClass('/services')} onClick={scrollToTop}>
               Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')} onClick={scrollToTop}>
-              About us
             </NavLink>
           </li>
           <li>
@@ -113,13 +113,13 @@ const Navbar = ({ navbarClassName }) => {
               <NavLink to='/' onClick={scrollToTop}>Home</NavLink>
             </li>
             <li className='border-b'>
+              <NavLink to='/aboutus' onClick={scrollToTop}>About us</NavLink>
+            </li>
+            <li className='border-b'>
               <NavLink to='/products' onClick={scrollToTop}>Products</NavLink>
             </li>
             <li className='border-b'>
               <NavLink to='/services' onClick={scrollToTop}>Services</NavLink>
-            </li>
-            <li className='border-b'>
-              <NavLink to='/aboutus' onClick={scrollToTop}>About us</NavLink>
             </li>
             <li className='border-b'>
               <NavLink to='/career' onClick={scrollToTop}>Career</NavLink>

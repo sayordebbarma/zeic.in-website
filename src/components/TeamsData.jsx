@@ -1,45 +1,52 @@
 import LLanuJamir from '../assets/images/aboutUs/teams/LLanuJamir.png';
 import Sungkumningsang from '../assets/images/aboutUs/teams/Sungkumningsang.png';
-import NyanbeniOdyuo from '../assets/images/aboutUs/teams/NyanbeniOdyuo.png';
-import Lima from '../assets/images/aboutUs/teams/Lima.png';
-import Imchungnok from '../assets/images/aboutUs/teams/Imchungnok.png';
+import NyanbeniKikon from '../assets/images/aboutUs/teams/NyanbeniKikon.png';
+import ImkongmerenLongkumer from '../assets/images/aboutUs/teams/ImkongmerenLongkumer.png';
+import LemangurLtr from '../assets/images/aboutUs/teams/LemangurLtr.png';
+import ImjungnokImchen from '../assets/images/aboutUs/teams/ImjungnokImchen.png';
 import AlilaJamir from '../assets/images/aboutUs/teams/AlilaJamir.png';
 
 export const team = [
     {
         id: 1,
         name: 'L Lanu Jamir',
-        role: 'Innovator',
+        role: 'Innovator & Proprietor',
         avatar: LLanuJamir
     },
     {
         id: 2,
         name: 'Alila Jamir',
-        role: 'Manager',
+        role: 'HR',
         avatar: AlilaJamir
     },
     {
         id: 3,
         name: 'Sungkumningsang',
-        role: 'Sound Engineer',
+        role: 'Manager',
         avatar: Sungkumningsang
     },
     {
         id: 4,
-        name: 'Nyanbeni Odyuo',
+        name: 'Nyanbeni Kikon',
         role: 'Marketing & Outreach',
-        avatar: NyanbeniOdyuo
+        avatar: NyanbeniKikon
     },
     {
         id: 5,
-        name: 'Lima',
-        role: 'CNC Operator',
-        avatar: Lima
+        name: 'Imkongmeren Longkumer',
+        role: 'Supervisor',
+        avatar: ImkongmerenLongkumer
     },
     {
         id: 6,
-        name: 'Imchungnok',
-        role: 'Sawmill Operator',
-        avatar: Imchungnok
+        name: 'Lemangur Ltr',
+        role: 'Supervisor',
+        avatar: LemangurLtr
+    },
+    {
+        id: 7,
+        name: 'Imjungnok Imchen ',
+        role: 'Contributer',
+        avatar: ImjungnokImchen 
     },
 ];

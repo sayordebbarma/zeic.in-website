@@ -8,9 +8,9 @@ const videos = [
 
 const YtSection = () => {
   return (
-    <div className='grid grid-cols-3 gap-10 m-20 justify-center'>
+    <div className='grid md:grid-cols-3 gap-10 mx-8 my-10 justify-center'>
       {videos.map((video) => (
-        <div key={video.id} className='aspect-w-16 aspect-h-9'>
+        <div key={video.id}>
           <iframe
             title={video.title}
             width='100%'

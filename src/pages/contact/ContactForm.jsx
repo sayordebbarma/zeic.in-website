@@ -65,8 +65,8 @@ const ContactForm = () => {
     'block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6';
   return (
     <div className='mx-8 my-6'>
-      <div className='mx-full text-center'>
-        <div className='mt-2 text-gray-600 flex flex-row justify-evenly'>
+      <div className='mx-full md:text-center'>
+        <div className='mt-2 text-gray-600 flex flex-col md:flex-row justify-evenly'>
           <ContactInfo
             icon={faLocationDot}
             text={
@@ -87,7 +87,7 @@ const ContactForm = () => {
           />
           <ContactInfo
             icon={faEnvelope}
-            text={<span>example@email.com</span>}
+            text={<span>info@zeic.in</span>}
           />
         </div>
       </div>
