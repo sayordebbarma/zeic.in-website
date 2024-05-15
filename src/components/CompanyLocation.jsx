@@ -1,8 +1,3 @@
-// const apiKey = 'AIzaSyCXfuzxjPx8Wh_U7cbE7l7V_6FabcYXoYY';
-// const center = {
-//     lat: 25.85022243826492,
-//     lng: 93.80657489298987,
-//   };
 import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
@@ -19,7 +14,7 @@ const position = {
 function CompanyLocation() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyCXfuzxjPx8Wh_U7cbE7l7V_6FabcYXoYY"
+    googleMapsApiKey: import.meta.env.VITE_MAPS_API
   });
 
   const [map, setMap] = React.useState(null);
@@ -48,7 +43,7 @@ function CompanyLocation() {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={position}
-      zoom={10} // Initial zoom level (this will be overridden by onLoad)
+      zoom={10}
       onLoad={onLoad}
       onUnmount={onUnmount}
       options={{
