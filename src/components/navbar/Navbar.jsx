@@ -45,7 +45,7 @@ const Navbar = ({ navbarClassName }) => {
       }`}
     >
       <div className='flex justify-between items-center w-full h-20 m-auto text-white'>
-        <Link to='/' onClick={scrollToTop} className='flex items-center'>
+        <Link to='/' onClick={scrollToTop} className='flex items-center cursor-pointer'>
           <img className='h-20' src={zeicLogo} alt='zeic logo' />
           <h1 className='text-3xl font-bold ml-2'>ZEIC</h1>
         </Link>
