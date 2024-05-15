@@ -72,7 +72,7 @@ const ContactUs = () => {
         Contact Us
       </h1>
 
-      <div className='container px-20 pb-10 mx-auto flex sm:flex-nowrap flex-wrap'>
+      <div className='container px-8 pb-10 mx-auto flex sm:flex-nowrap flex-wrap'>
         <div className='lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0'>
           <h2 className='text-4xl font-bold text-red-600 mb-10'>Reach us at</h2>
           <div>
