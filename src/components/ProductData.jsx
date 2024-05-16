@@ -53,13 +53,13 @@ export const products = [
     id: 3,
     name: 'ELC',
     description:
-      'Digital Electronic Load Controller for Pico and Micro Hydro power. This innovative device stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation',
+      'Digital and Analogue  Electronic Load Controller for Pico and Micro Hydro power. This innovative device stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation',
     types: [
       'Analogue ELC: Uses analog circuitry to regulate and control electrical loads.',
       'Digital ELC: Digital electronic load control utilizes digital technology, such as microcontrollers or digital signal processors (DSPs), to manage and regulate electrical loads.',
     ],
     specifications: [
-      'Power Range: 5kW to 250kW',
+      'Power Range: 2kW to 250kW',
       'Weight: 1.5 kgs',
     ],
     images: [elc1, elc2],
