@@ -53,7 +53,7 @@ const ProductCard = ({ productId }) => {
     <div className={`mx-8 md:mx-20 ${containerStyle} justify-center items-center`}>
       {isEven && (
         <div
-          className='max-w-[600px] h-[500px] w-full m-auto py-16 px-4 relative group'
+          className='max-w-[600px] h-[500px] w-full m-auto px-4 relative group'
           onClick={toggleImageExpansion}
         >
           <div
@@ -92,7 +92,7 @@ const ProductCard = ({ productId }) => {
         <div className='w-3/4 rounded-xl m-4'>
           <h2 className='text-3xl font-bold text-gray-800'>{product.name.toUpperCase()}</h2>
           <ul className='list-disc'>
-            <h1 className='font-bold text-l mt-4 text-gray-800'>TYPES: </h1>
+            <h1 className='font-bold text-lg mt-4 text-gray-800'>TYPES:</h1>
             {product.types.map((type, index) => (
               <li key={index} className='text-md p-0 text-gray-600'>
                 {type}
@@ -101,7 +101,7 @@ const ProductCard = ({ productId }) => {
           </ul>
           {Array.isArray(product.specifications) && (
             <ul className='list-disc'>
-              <h1 className='font-bold text-l mt-4 text-gray-800'>SPECIFICATIONS: </h1>
+              <h1 className='font-bold text-lg mt-4 text-gray-800'>SPECIFICATIONS:</h1>
               {product.specifications.map((specification, index) => (
                 <li key={index} className='text-md p-0 text-gray-600'>
                   {specification}
@@ -111,10 +111,11 @@ const ProductCard = ({ productId }) => {
           )}
         </div>
       </div>
+
       {/* For odd product IDs, display images below details */}
       {!isEven && (
         <div
-          className='max-w-[600px] h-[500px] w-full m-auto py-16 px-4 relative group'
+          className='max-w-[600px] h-[500px] w-full m-auto px-4 relative group'
           onClick={toggleImageExpansion}
         >
           <div
@@ -149,7 +150,8 @@ const ProductCard = ({ productId }) => {
           </div>
         </div>
       )}
-      {/* Expanded image for even product */}
+      
+      {/* Expanded image for product */}
       {isImageExpanded && (
         <div
           className='fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 flex justify-center items-center z-50'

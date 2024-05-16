@@ -14,6 +14,7 @@ export default function CareerForm() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
+    phoneNumber: '',
     address: '',
     city: '',
     region: '',
@@ -59,7 +60,7 @@ export default function CareerForm() {
   //---------------------------Upload section-------------------------------------
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log("file: ", file);
+    console.log('file: ', file);
     const allowedTypes = [
       'application/pdf',
       'application/msword',
@@ -199,6 +200,26 @@ export default function CareerForm() {
 
               <div className='col-span-full'>
                 <label
+                  htmlFor='email'
+                  className='block text-sm font-medium leading-6 text-gray-900'
+                >
+                  Phone Number
+                </label>
+                <div className='mt-2'>
+                  <input
+                    id='phoneNumber'
+                    name='phoneNumber'
+                    type='tel'
+                    autoComplete='phoneNumber'
+                    className={inputStyle}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className='col-span-full'>
+                <label
                   htmlFor='address'
                   className='block text-sm font-medium leading-6 text-gray-900'
                 >
@@ -292,9 +313,9 @@ export default function CareerForm() {
             <div className='mt-10 space-y-10'>
               <fieldset>
                 <legend className='text-lg font-semibold leading-6 text-gray-900'>
-                  Preferred Department
+                  Preferred Departments
                 </legend>
-                <div className='flex flex-wrap gap-4'>
+                <div className='flex flex-wrap mt-4 gap-4'>
                   {departments.map((department) => (
                     <div
                       className='flex items-center gap-x-3'
@@ -342,8 +363,14 @@ export default function CareerForm() {
             </div>
           </div>
 
-          {/* upload */}
           <div className='border-b border-gray-900/10 pb-12'>
+            <p className='mt-1 text-sm leading-6 text-gray-600'>
+              *Note: Kindly keep your resume ready.
+            </p>
+          </div>
+
+          {/* upload */}
+          {/* <div className='border-b border-gray-900/10 pb-12'>
             <h2 className='text-2xl font-semibold leading-7 text-red-600'>
               Upload Your Resume/CV
             </h2>
@@ -379,7 +406,6 @@ export default function CareerForm() {
                   <div className='mt-4 flex items-center justify-center'>
                     <div className='flex items-center gap-2'>
                       <p className='text-sm leading-6 text-gray-600 bg-white border px-1 py-0.5 rounded-md shadow-sm'>
-                        {/* bg-white border p-1 rounded-md shadow-sm */}
                         {selectedFile.name}
                       </p>
                       <button
@@ -403,7 +429,7 @@ export default function CareerForm() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* button */}

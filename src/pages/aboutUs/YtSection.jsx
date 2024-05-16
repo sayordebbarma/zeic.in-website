@@ -8,7 +8,7 @@ const videos = [
 
 const YtSection = () => {
   return (
-    <div className='grid md:grid-cols-3 gap-10 mx-8 my-10 justify-center'>
+    <div className='grid md:grid-cols-3 gap-10 mx-8 my-10'>
       {videos.map((video) => (
         <div key={video.id}>
           <iframe
