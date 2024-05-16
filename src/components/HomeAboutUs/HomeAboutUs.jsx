@@ -45,6 +45,9 @@ const HomeAboutUs = () => {
                 Represented Meghalaya State Basin Development Authority
               </li>
               <li className='lg: mb-[-30px]'>
+              Represented Gram Vikas of India from Orrisa State, for the Hydro Empowerment Network from South and Southeast Asia in Indonesia
+              </li>
+              <li className='lg: mb-[-30px]'>
                 Intellectual Property Right for ELC Design (2021)
               </li>
               <li className='lg: mb-[-10px]'>

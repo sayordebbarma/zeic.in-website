@@ -13,7 +13,15 @@ const Timeline = () => {
       title:
         'Govt. of Nagaland- District Industries Centre- Certificate of Appreciation in the field of Manufacturing, Service, and Innovation',
     },
-    { year: 2013, title: 'Establishment of Zip Sound' },
+    { year: 2013, 
+      title: 'Establishment of Zip Sound' },
+    { year: 2016, 
+      title: 'Recognized ELC Technician by ASEAN Hydropower Competence Centre (HYCOM)' },
+    {
+      year: 2019,
+      title:
+        'National Innovation Foundation- Consolation Award for ELC design, through his Excellency, the President of India',
+    },
     {
       year: 2020,
       title:
