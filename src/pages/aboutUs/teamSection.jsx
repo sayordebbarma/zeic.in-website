@@ -4,7 +4,7 @@ import { team } from '../../components/TeamsData';
 const teamSection = () => {
   return (
     <section className="text-gray-600 body-font">
-      <div className="container p-5 mx-auto">
+      <div className="container p-8 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="text-2xl font-semibold title-font mb-4 text-gray-900">MEET THE TEAM</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Meet our diverse team, united in our dedication to excellence and innovation.</p>

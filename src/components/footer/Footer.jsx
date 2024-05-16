@@ -21,7 +21,7 @@ const Footer = ({ productRefs }) => {
   const scrollToProduct = (productId) => {
     const productRef = productRefs[productId - 1];
     if (productRef && productRef.current) {
-      productRef.current.scrollIntoView({behavior: 'smooth' });
+      productRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -29,7 +29,7 @@ const Footer = ({ productRefs }) => {
     <footer className='bg-gray-800 text-white'>
       <div className='container px-6 pt-12 mx-auto'>
         <div className='grid grid-cols-2 gap-6 sm:gap-y-10 lg:grid-cols-6'>
-          <div className='font-light sm:col-span-2'>
+          <div className='font-light col-span-2'>
             <img
               className='h-20 lg:mx-[-20px]'
               src={zeicLogo}
@@ -41,24 +41,24 @@ const Footer = ({ productRefs }) => {
               Innovation Centre
             </h1>
             <p className='my-3'>
-              An “All In One” centre with Innovation, Sustainability
-              <br /> and Development zipped under one roof
+              An “All In One” centre with Innovation,<br /> Sustainability
+               and Development zipped<br /> under one roof
             </p>
           </div>
-          <div>
+          <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Quick Link</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
               <Link to='/' className={linkStyle} onClick={scrollToTop}>
                 Home
+              </Link>
+              <Link to='/aboutus' className={linkStyle} onClick={scrollToTop}>
+                About Us
               </Link>
               <Link to='/products' className={linkStyle} onClick={scrollToTop}>
                 Products
               </Link>
               <Link to='/services' className={linkStyle} onClick={scrollToTop}>
                 Services
-              </Link>
-              <Link to='/aboutus' className={linkStyle} onClick={scrollToTop}>
-                About Us
               </Link>
               <Link to='/career' className={linkStyle} onClick={scrollToTop}>
                 Career
@@ -71,39 +71,70 @@ const Footer = ({ productRefs }) => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Products</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(1)}>Zip Sound</Link>
-              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(2)}>CNC Woodwork</Link>
-              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(3)}>ELC</Link>
-              <Link to='/products' className={linkStyle} onClick={() => scrollToProduct(4)}>Servo Stabilizer</Link>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={() => scrollToProduct(1)}
+              >
+                Zip Sound
+              </Link>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={() => scrollToProduct(2)}
+              >
+                CNC Woodwork
+              </Link>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={() => scrollToProduct(3)}
+              >
+                ELC
+              </Link>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={() => scrollToProduct(4)}
+              >
+                Servo Stabilizer
+              </Link>
             </div>
           </div>
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Services</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Sound System Rental</Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Stage Rental</Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Generator Rental</Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>Courses</Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+                Sound System Rental
+              </Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+                Stage Rental
+              </Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+                Generator Rental
+              </Link>
+              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+                Courses
+              </Link>
             </div>
           </div>
-          <div className='lg:mx-[-50px]'>
+          <div className='lg:mx-[-50px] col-span-2 md:col-span-1'>
             <p className='font-semibold text-white'>Contact Us</p>
-            
             {/* Map location of the company */}
             <CompanyLocation />
 
             <div className='flex flex-col mt-3 font-light'>
-              <p>
+              <p className='flex mt-3 font-light items-center'>
                 <FontAwesomeIcon className='mr-3' icon={faLocationDot} />
                 Hno. 138, Lane-6, Aoyim Village <br />
                 Nuiland Road, 4th Mile <br />
                 Chümoukedima, Nagaland : 797115
               </p>
-              <p className='flex mt-3 font-light'>
-                <FontAwesomeIcon className='mr-3' icon={faPhone} /> +91
-                7005521094/+91 9402696843
+              <p className='flex mt-3 font-light items-center'>
+                <FontAwesomeIcon className='mr-3' icon={faPhone} /> 
+                +91 7005521094 / +91 9402696843
               </p>
-              <p className='flex mt-3 font-light'>
+              <p className='flex mt-3 font-light items-center'>
                 <FontAwesomeIcon className='mr-3' icon={faEnvelope} />{' '}
                 info@zeic.in
               </p>
@@ -118,7 +149,14 @@ const Footer = ({ productRefs }) => {
             reserved.
           </p>
           <p>
-            Designed by  <Link to= '' className='underline text-red-600 hover:text-red-700'>Sayor Jamir</Link> & <Link to= '' className='underline text-red-600 hover:text-red-700'>Tushienla Jamir</Link>
+            Designed by{' '}
+            <Link to='' className='underline text-red-600 hover:text-red-700'>
+              Sayor Debbarma
+            </Link>{' '}
+            &{' '}
+            <Link to='' className='underline text-red-600 hover:text-red-700'>
+              Tushienla Jamir
+            </Link>
           </p>
         </div>
       </div>

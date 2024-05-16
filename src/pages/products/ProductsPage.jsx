@@ -19,7 +19,7 @@ function ProductsPage() {
     <>
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-800' />
-      <div className='mt-32 mb-32 lg:mt-56 lg:mb-32 flex flex-wrap flex-col'>
+       <div className='mt-32 mb-8 flex flex-wrap flex-col'> {/* lg:mt-56 lg:mb-32 */}
         <div ref={product1Ref}>
           <ProductCard productId={1} />
         </div>

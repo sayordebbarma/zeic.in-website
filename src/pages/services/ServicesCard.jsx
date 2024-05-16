@@ -18,6 +18,8 @@ import Generator3 from '../../assets/images/services/generator/Generator3.png';
 import Generator4 from '../../assets/images/services/generator/Generator4.png';
 import course1 from '../../assets/images/services/courses/Course1.png';
 import course2 from '../../assets/images/services/courses/Course2.png';
+import course3 from '../../assets/images/services/courses/Course3.png';
+import course4 from '../../assets/images/services/courses/Course4.png';
 
 const cardData = [
   {
@@ -39,7 +41,7 @@ const cardData = [
     title: 'Audio Engineering Course',
     content:
       'Courses for Mixing, Equilization, Power Distribution, Amp class division and many more...',
-    images: [course1, course2],
+    images: [course1, course2, course3, course4],
   },
 ];
 
@@ -114,9 +116,12 @@ const ServicesCard = () => {
     'block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6';
 
   return (
-    <div className='mx-8 my-6 grid justify-center md:grid-cols-2 gap-4'>
+    <div className='mx-8 my-8 grid justify-center md:grid-cols-2 gap-4'>
       {cardData.map((card, index) => (
-        <div key={index} className='bg-gray-100 border border-gray-100 shadow-xl'>
+        <div
+          key={index}
+          className='bg-gray-100 border border-gray-100 shadow-xl'
+        >
           <div className='relative w-full h-80 overflow-hidden'>
             {card.images.map((image, imgIndex) => (
               <img
