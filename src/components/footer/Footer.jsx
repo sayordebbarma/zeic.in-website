@@ -72,32 +72,16 @@ const Footer = ({ productRefs }) => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Products</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link
-                to='/products'
-                className={linkStyle}
-                onClick={() => scrollToProduct(1)}
-              >
+              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
                 Zip Sound
               </Link>
-              <Link
-                to='/products'
-                className={linkStyle}
-                onClick={() => scrollToProduct(2)}
-              >
+              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
                 CNC Woodwork
               </Link>
-              <Link
-                to='/products'
-                className={linkStyle}
-                onClick={() => scrollToProduct(3)}
-              >
+              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
                 ELC
               </Link>
-              <Link
-                to='/products'
-                className={linkStyle}
-                onClick={() => scrollToProduct(4)}
-              >
+              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
                 Servo Stabilizer
               </Link>
             </div>

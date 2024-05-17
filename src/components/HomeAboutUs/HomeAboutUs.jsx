@@ -16,7 +16,7 @@ const HomeAboutUs = () => {
 
       <div className='flex flex-col justify-between lg:flex-row items-center md:m-4 lg:m-8'>
         <div
-          className='relative w-96 md:w-2/3 lg:w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
+          className='relative w-80 md:w-2/3 lg:w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
           style={{ boxShadow: '10px 10px', padding: '0' }}
         >
           <img src={InnovatorImg} alt='The Innovator Img' />
