@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPhone,
-  faLocationDot,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import { faPhone, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
 import { Dialog } from '@headlessui/react';
 
 const ContactForm = () => {
@@ -27,19 +23,19 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        'http://localhost:500/send-email',
-        formData
-      );
-      console.log('Email response:', response.data);
-      setSubmitted(true); // Set submitted state to true on successful email send
-    } catch (error) {
+    emailjs.send(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_CONTACTS_ID,
+      formData,
+      import.meta.env.VITE_PUBLIC_KEY
+    ).then(() => {
+      setSubmitted(true);
+    }).catch((error) => {
       console.error('Error sending email:', error);
       setSubmitError('Failed to submit the form. Please try again later.');
-    }
+    });
   };
 
   const ContactInfo = ({ icon, text }) => {
@@ -56,7 +52,6 @@ const ContactForm = () => {
   };
 
   const validatePhoneNumber = (inputPhoneNumber) => {
-    // Regular expression pattern for xxx-xxx-xxxx format
     const phoneNumberPattern = /^\d{3}-\d{3}-\d{4}$/;
     return phoneNumberPattern.test(inputPhoneNumber);
   };
@@ -109,6 +104,7 @@ const ContactForm = () => {
                 autoComplete='given-name'
                 className={inputStyle}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -127,6 +123,7 @@ const ContactForm = () => {
                 autoComplete='family-name'
                 className={inputStyle}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -145,6 +142,7 @@ const ContactForm = () => {
                 autoComplete='email'
                 className={inputStyle}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -163,6 +161,7 @@ const ContactForm = () => {
                 autoComplete='tel'
                 className={inputStyle}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -181,6 +180,7 @@ const ContactForm = () => {
                 className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6 resize-none'
                 defaultValue={''}
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -220,6 +220,12 @@ const ContactForm = () => {
           </div>
         </div>
       </Dialog>
+
+      {submitError && (
+        <div className='mt-4 text-center text-red-600'>
+          {submitError}
+        </div>
+      )}
     </div>
   );
 };

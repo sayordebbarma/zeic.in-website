@@ -39,13 +39,7 @@ const ImageCarousel = () => {
         <h1 className='text-2xl font-semibold title-font mb-4 text-center text-gray-900'>THE ENTERPRISE</h1>
         <p className=' mt-4 mb-16 text-base text-justify text-gray-600'>
         Founded in 2008 by L. Lanu Jamir, started with UPS manufacturing, followed by Zip Sound Systems.
-        Zip Engineering & Innovation Centre, just like the zip that we know, envisions an ‘all in one’ centre 
-        with innovation, sustainability, development all zipped into one bag.
-        We have always been looking to put to work all the resources that are there at our disposal, 
-        given the geographic location of Nagaland and the North-East region of India. We aim to disrupt existing 
-        markets by introducing innovative, clean, and green solutions to contemporary challenges. With a commitment 
-        to making lives simpler, easier, and better, we strive to pioneer transformative advancements that leave a 
-        positive impact on society.
+        Zip Engineering & Innovation Centre, just like the zip that we know, envisions an ‘all in one’ centre with innovation, sustainability, development all zipped into one bag. We have always been looking to put to work all the resources that are there at our disposal, given the geographic location of Nagaland and the North-East region of India. We aim to disrupt existing markets by introducing innovative, clean, and green solutions to contemporary challenges. With a commitment to making lives simpler, easier, and better, we strive to pioneer transformative advancements that leave a positive impact on society.
         </p>
     </div>
     </section>

@@ -41,8 +41,9 @@ const Footer = ({ productRefs }) => {
               Innovation Centre
             </h1>
             <p className='my-3'>
-              An “All In One” centre with Innovation,<br /> Sustainability
-               and Development zipped<br /> under one roof
+              An “All In One” centre with Innovation,
+              <br /> Sustainability and Development zipped
+              <br /> under one roof
             </p>
           </div>
           <div className='lg:mx-[-50px]'>
@@ -120,6 +121,7 @@ const Footer = ({ productRefs }) => {
           </div>
           <div className='lg:mx-[-50px] col-span-2 md:col-span-1'>
             <p className='font-semibold text-white'>Contact Us</p>
+
             {/* Map location of the company */}
             <CompanyLocation />
 
@@ -131,7 +133,7 @@ const Footer = ({ productRefs }) => {
                 Chümoukedima, Nagaland : 797115
               </p>
               <p className='flex mt-3 font-light items-center'>
-                <FontAwesomeIcon className='mr-3' icon={faPhone} /> 
+                <FontAwesomeIcon className='mr-3' icon={faPhone} />
                 +91 7005521094 / +91 9402696843
               </p>
               <p className='flex mt-3 font-light items-center'>
@@ -150,11 +152,19 @@ const Footer = ({ productRefs }) => {
           </p>
           <p>
             Designed by{' '}
-            <Link to='' className='underline text-red-600 hover:text-red-700'>
+            <Link
+              to='https://github.com/sayordebbarma'
+              target='blank'
+              className='underline text-red-600 hover:text-red-700'
+            >
               Sayor Debbarma
             </Link>{' '}
             &{' '}
-            <Link to='' className='underline text-red-600 hover:text-red-700'>
+            <Link
+              to='https://github.com/tushienla'
+              target='blank'
+              className='underline text-red-600 hover:text-red-700'
+            >
               Tushienla Jamir
             </Link>
           </p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTimes } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 import { Dialog } from '@headlessui/react';
 
 import sound1 from '../../assets/images/services/soundSystem/Sound1.png';
@@ -97,19 +97,40 @@ const ServicesCard = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        'http://localhost:500/service-mail',
-        formData
+    const templateParams = {
+      service_type: formData.serviceType,
+      name: formData.fullName,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      date: formData.dateTime,
+      duration: formData.duration,
+      location: formData.location,
+      message: formData.requirements,
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_SERVICES_ID,
+        templateParams,
+        import.meta.env.VITE_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log(
+            'Email successfully sent!',
+            response.status,
+            response.text
+          );
+          setSubmitted(true);
+        },
+        (error) => {
+          console.error('Failed to send email:', error);
+          setSubmitError('Failed to submit the form. Please try again later.');
+        }
       );
-      console.log('Email response:', response.data);
-      setSubmitted(true);
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setSubmitError('Failed to submit the form. Please try again later.');
-    }
   };
 
   const inputStyle =
@@ -208,6 +229,8 @@ const ServicesCard = () => {
                       name='fullName'
                       className={inputStyle}
                       onChange={handleChange}
+                      value={formData.fullName}
+                      required
                     />
                   </div>
                 </div>
@@ -225,6 +248,8 @@ const ServicesCard = () => {
                       name='email'
                       className={inputStyle}
                       onChange={handleChange}
+                      value={formData.email}
+                      required
                     />
                   </div>
                 </div>
@@ -242,6 +267,8 @@ const ServicesCard = () => {
                       name='phoneNumber'
                       className={inputStyle}
                       onChange={handleChange}
+                      value={formData.phoneNumber}
+                      required
                     />
                   </div>
                 </div>
@@ -259,6 +286,8 @@ const ServicesCard = () => {
                       name='dateTime'
                       className={inputStyle}
                       onChange={handleChange}
+                      value={formData.dateTime}
+                      required
                     />
                   </div>
                 </div>
@@ -276,6 +305,8 @@ const ServicesCard = () => {
                       name='duration'
                       className={inputStyle}
                       onChange={handleChange}
+                      value={formData.duration}
+                      required
                     />
                   </div>
                 </div>
@@ -293,6 +324,8 @@ const ServicesCard = () => {
                       name='location'
                       className={inputStyle}
                       onChange={handleChange}
+                      value={formData.location}
+                      required
                     />
                   </div>
                 </div>
@@ -311,6 +344,7 @@ const ServicesCard = () => {
                       className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6 resize-none'
                       defaultValue={''}
                       onChange={handleChange}
+                      value={formData.requirements}
                     ></textarea>
                   </div>
                 </div>

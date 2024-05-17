@@ -31,21 +31,20 @@ const HomeAboutUs = () => {
               Nagaland, is the visionary founder of Zip Engineering and
               Innovation Centre. His journey, marked by resilience and
               steadfastness, reflects a commitment to fostering electronic,
-              mechanical, and electrical innovations.{' '}
+              mechanical, and electrical innovations.
             </p>
             <ul className='list-disc pl-6'>
               <li className='lg: mb-[-30px]'>
                 Recognized ELC Technician by Asosiasi Hidro Bandung
               </li>
               <li className='lg: mb-[-30px]'>
-                Recognized ELC Technician by ASEAN Hydropower Competence Centre
-                (HYCOM)
+                Recognized ELC Technician by ASEAN Hydropower Competence Centre (HYCOM)
               </li>
               <li className='lg: mb-[-30px]'>
                 Represented Meghalaya State Basin Development Authority
               </li>
               <li className='lg: mb-[-30px]'>
-              Represented Gram Vikas of India from Orrisa State, for the Hydro Empowerment Network from South and Southeast Asia in Indonesia
+              Represented Gram Vikas of India from Odisha State, for the Hydro Empowerment Network from South and Southeast Asia in Indonesia
               </li>
               <li className='lg: mb-[-30px]'>
                 Intellectual Property Right for ELC Design (2021)

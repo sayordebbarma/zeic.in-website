@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 import { Dialog } from '@headlessui/react';
 
 export default function CareerForm() {
@@ -21,16 +19,14 @@ export default function CareerForm() {
     postalCode: '',
     selectedDepartments: [],
     message: '',
-    // fileUpload: null,
   });
 
-  // Define the departments array within the component scope
   const departments = [
-    { id: 'sound-engineer', name: 'Sound Engineer' },
-    { id: 'speaker-assembler', name: 'Speaker Assembler' },
-    { id: 'cnc-operator', name: 'CNC Operator' },
-    { id: 'sawmill-operator', name: 'Sawmill Operator' },
-    { id: 'others', name: 'If Other (Please Specify)' },
+    { id: ' Sound-Engineer', name: 'Sound Engineer' },
+    { id: ' Speaker-Assembler', name: 'Speaker Assembler' },
+    { id: ' CNC-Operator', name: 'CNC Operator' },
+    { id: ' Sawmill-Operator', name: 'Sawmill Operator' },
+    { id: ' others', name: 'If Other (Please Specify)' },
   ];
 
   const handleDepartmentChange = (e) => {
@@ -38,68 +34,21 @@ export default function CareerForm() {
     if (checked) {
       setFormData((prevData) => ({
         ...prevData,
-        selectedDepartments: [...prevData.selectedDepartments, id], // Add the department to selectedDepartments array
+        selectedDepartments: [...prevData.selectedDepartments, id],
       }));
     } else {
       setFormData((prevData) => ({
         ...prevData,
         selectedDepartments: prevData.selectedDepartments.filter(
           (depId) => depId !== id
-        ), // Remove the department from selectedDepartments array
+        ),
       }));
     }
   };
 
   const handleReset = () => {
     formRef.current.reset();
-    setSelectedDepartments([]);
-    setSelectedFile(null);
-    setFileError('');
-  };
-
-  //---------------------------Upload section-------------------------------------
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    console.log('file: ', file);
-    const allowedTypes = [
-      'application/pdf',
-      'application/msword',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    ];
-    const maxSize = 8 * 1024 * 1024; // 10MB in bytes
-
-    if (file && allowedTypes.includes(file.type) && file.size <= maxSize) {
-      setSelectedFile(file);
-      setFileError('');
-    } else {
-      setSelectedFile(null);
-      setFileError('Invalid file type or size.');
-    }
-  };
-
-  const handleFileDrop = (e) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files[0];
-    const allowedTypes = [
-      'application/pdf',
-      'application/msword',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    ];
-    const maxSize = 8 * 1024 * 1024; // 10MB in bytes
-
-    if (file && allowedTypes.includes(file.type) && file.size <= maxSize) {
-      setSelectedFile(file);
-      setFileError('');
-    } else {
-      setFileError('Invalid file type or size.');
-    }
-  };
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
-
-  const handleRemoveFile = () => {
+    handleDepartmentChange([]);
     setSelectedFile(null);
     setFileError('');
   };
@@ -112,14 +61,15 @@ export default function CareerForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
-      const response = await axios.post(
-        'http://localhost:500/career-mail',
-        formData
+      await emailjs.send(
+        import.meta.env.VITE_CAREER_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_CAREER_ID,
+        formData,
+        import.meta.env.VITE_CAREER_PUBLIC_KEY
       );
-      console.log('Email response:', response.data);
-      setSubmitted(true); // Set submitted state to true on successful email send
+
+      setSubmitted(true);
     } catch (error) {
       console.error('Error sending email:', error);
       setSubmitError('Failed to submit the form. Please try again later.');
@@ -150,28 +100,12 @@ export default function CareerForm() {
                   Full Name
                 </label>
                 <div className='relative mt-2.5'>
-                  <div className='absolute inset-y-0 left-0 flex items-center'>
-                    <label htmlFor='title' className='sr-only'>
-                      Title
-                    </label>
-                    <select
-                      id='title'
-                      name='title'
-                      className='cursor-pointer h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-2 text-gray-600 sm:text-sm outline-none'
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value='Mr'>Mr</option>
-                      <option value='Mrs'>Mrs</option>
-                      <option value='Miss'>Miss</option>
-                    </select>
-                  </div>
                   <input
                     type='tel'
                     name='fullName'
                     id='fullName'
                     autoComplete='name'
-                    className='block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6'
+                    className={inputStyle}
                     onChange={handleChange}
                     required
                   />
@@ -368,68 +302,6 @@ export default function CareerForm() {
               *Note: Kindly keep your resume ready.
             </p>
           </div>
-
-          {/* upload */}
-          {/* <div className='border-b border-gray-900/10 pb-12'>
-            <h2 className='text-2xl font-semibold leading-7 text-red-600'>
-              Upload Your Resume/CV
-            </h2>
-            <p className='mt-1 text-sm leading-6 text-gray-600'>
-              In PDF/DOC Format. Max File Size: 8MB
-            </p>
-            <div
-              className='mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10'
-              onDrop={handleFileDrop}
-              onDragOver={handleDragOver}
-            >
-              <div className='text-center'>
-                {!selectedFile ? (
-                  <div className='mt-4 flex text-sm leading-6 text-gray-600'>
-                    <label
-                      htmlFor='filUpload'
-                      className='relative cursor-pointer rounded-md bg-white font-semibold text-red-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-red-600 focus-within:ring-offset-2 hover:text-red-800'
-                    >
-                      <span>Choose a file</span>
-                      <input
-                        id='filUpload'
-                        name='filUpload'
-                        type='file'
-                        accept='.pdf,.doc,.docx'
-                        className='sr-only'
-                        onChange={handleFileChange}
-                        required
-                      />
-                    </label>
-                    <p className='pl-1'>or drag and drop</p>
-                  </div>
-                ) : (
-                  <div className='mt-4 flex items-center justify-center'>
-                    <div className='flex items-center gap-2'>
-                      <p className='text-sm leading-6 text-gray-600 bg-white border px-1 py-0.5 rounded-md shadow-sm'>
-                        {selectedFile.name}
-                      </p>
-                      <button
-                        type='button'
-                        className='text-red-600 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50'
-                        onClick={handleRemoveFile}
-                      >
-                        <FontAwesomeIcon
-                          icon={faXmark}
-                          className='h-full w-4'
-                        />
-                      </button>
-                    </div>
-                  </div>
-                )}
-                {fileError && (
-                  <p className='text-sm text-red-600 mt-2'>{fileError}</p>
-                )}
-                <p className='text-xs leading-5 text-gray-600'>
-                  PDF or DOC up to 8MB
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         {/* button */}
@@ -449,6 +321,7 @@ export default function CareerForm() {
           </button>
         </div>
       </form>
+
       {/* Dialog pop-up for submit message */}
       <Dialog
         open={submitted}

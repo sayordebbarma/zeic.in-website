@@ -45,43 +45,69 @@ const Navbar = ({ navbarClassName }) => {
       }`}
     >
       <div className='flex justify-between items-center w-full h-20 m-auto text-white'>
-        <Link to='/' onClick={scrollToTop} className='flex items-center cursor-pointer'>
+        <Link
+          to='/'
+          onClick={scrollToTop}
+          className='flex items-center cursor-pointer'
+        >
           <img className='h-20' src={zeicLogo} alt='zeic logo' />
           <h1 className='text-3xl font-bold ml-2'>ZEIC</h1>
         </Link>
+
         {/* Desktop view */}
         <ul className='hidden md:flex'>
           <li>
             <NavLink
               exact={true ? 'true' : undefined}
               to='/'
-              className={getNavLinkClass('/')} onClick={scrollToTop}
+              className={getNavLinkClass('/')}
+              onClick={scrollToTop}
             >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to='/aboutus' className={getNavLinkClass('/aboutus')} onClick={scrollToTop}>
+            <NavLink
+              to='/aboutus'
+              className={getNavLinkClass('/aboutus')}
+              onClick={scrollToTop}
+            >
               About us
             </NavLink>
           </li>
           <li>
-            <NavLink to='/products' className={getNavLinkClass('/products')} onClick={scrollToTop}>
+            <NavLink
+              to='/products'
+              className={getNavLinkClass('/products')}
+              onClick={scrollToTop}
+            >
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink to='/services' className={getNavLinkClass('/services')} onClick={scrollToTop}>
+            <NavLink
+              to='/services'
+              className={getNavLinkClass('/services')}
+              onClick={scrollToTop}
+            >
               Services
             </NavLink>
           </li>
           <li>
-            <NavLink to='/career' className={getNavLinkClass('/career')} onClick={scrollToTop}>
+            <NavLink
+              to='/career'
+              className={getNavLinkClass('/career')}
+              onClick={scrollToTop}
+            >
               Career
             </NavLink>
           </li>
           <li>
-            <NavLink to='/contact' className={getNavLinkClass('/contact')} onClick={scrollToTop}>
+            <NavLink
+              to='/contact'
+              className={getNavLinkClass('/contact')}
+              onClick={scrollToTop}
+            >
               Contact
             </NavLink>
           </li>
@@ -106,26 +132,36 @@ const Navbar = ({ navbarClassName }) => {
               : 'absolute right-[-100%] top-1 ease-in-out duration-200'
           }
         >
-          {' '}
-          {/* flex flex-col */}
           <ul>
             <li className='border-b'>
-              <NavLink to='/' onClick={scrollToTop}>Home</NavLink>
+              <NavLink to='/' onClick={scrollToTop}>
+                Home
+              </NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/aboutus' onClick={scrollToTop}>About us</NavLink>
+              <NavLink to='/aboutus' onClick={scrollToTop}>
+                About us
+              </NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/products' onClick={scrollToTop}>Products</NavLink>
+              <NavLink to='/products' onClick={scrollToTop}>
+                Products
+              </NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/services' onClick={scrollToTop}>Services</NavLink>
+              <NavLink to='/services' onClick={scrollToTop}>
+                Services
+              </NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/career' onClick={scrollToTop}>Career</NavLink>
+              <NavLink to='/career' onClick={scrollToTop}>
+                Career
+              </NavLink>
             </li>
             <li className='border-b'>
-              <NavLink to='/contact' onClick={scrollToTop}>Contact</NavLink>
+              <NavLink to='/contact' onClick={scrollToTop}>
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>

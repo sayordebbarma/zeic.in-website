@@ -31,7 +31,6 @@ const ProductCard = ({ productId }) => {
     setProductImg(nextIndex);
   };
 
-  //const product = products.find((product) => product.id === productId);
   const product = products[productId - 1];
 
   if (!product) {
