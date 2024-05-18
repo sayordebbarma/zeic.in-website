@@ -45,7 +45,7 @@ const Timeline = () => {
 
   useEffect(() => {
     const updateDisplayCount = () => {
-      if (window.innerWidth > 640) {
+      if (window.innerWidth > 1300) {
         setInitialDisplayCount(2);
       } else {
         setInitialDisplayCount(1);
@@ -77,15 +77,18 @@ const Timeline = () => {
   };
 
   return (
-    <div className='flex justify-center mx-auto md:w-full lg:w-9/12 min-h-[250px]'>
+    <div
+      className='flex justify-center mx-8 lg:mx-40 '
+      style={{ height: '200px' }}
+    >
       <button
-        className='md:ml-4 text-4xl relative max-h-[150px] min-w-[150px]'
+        className='md:ml-4 text-4xl'
         onClick={handlePrev}
         disabled={startIndex === 0}
       >
         <FontAwesomeIcon icon={faCircleChevronLeft} />
       </button>
-      <ol className='border-1 dark:border-neutral-800 md:flex md:justify-center md:border-t md:gap-1 relative w-full'>
+      <ol className='border-1 dark:border-neutral-800 flex justify-center border-t md:gap-1 relative w-full'>
         {events.slice(startIndex, endIndex + 1).map((event, index) => (
           <li
             key={index}
@@ -106,7 +109,7 @@ const Timeline = () => {
         ))}
       </ol>
       <button
-        className='md:ml-4 text-4xl relative max-h-[150px] min-w-[150px]'
+        className='md:mr-4 text-4xl'
         onClick={handleNext}
         disabled={endIndex === events.length - 1}
       >

@@ -16,7 +16,7 @@ const HomeAboutUs = () => {
 
       <div className='flex flex-col justify-between lg:flex-row items-center md:m-4 lg:m-8'>
         <div
-          className='relative w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
+          className='relative w-52 md:w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
           style={{ boxShadow: '10px 10px', padding: '0' }}
         >
           <img src={InnovatorImg} alt='The Innovator Img' />
@@ -26,7 +26,7 @@ const HomeAboutUs = () => {
             <h3 className='font-semibold md:font-bold mb-4 lg:text-lg'>
               The Innovator:
             </h3>
-            <p className='font-light'>
+            <p className='font-light text-base lg:text-md'>
               L Lanu Jamir, an innovator and entrepreneur from Chümoukedima,
               Nagaland, is the visionary founder of Zip Engineering and
               Innovation Centre. His journey, marked by resilience and
