@@ -5,7 +5,7 @@ import {
   faLocationDot,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 import { Dialog } from '@headlessui/react';
 
 const ContactInfo = ({ icon, text }) => {
@@ -23,7 +23,6 @@ const ContactInfo = ({ icon, text }) => {
 
 const ContactUs = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [phoneNumberError, setPhoneNumberError] = useState('');
   const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
@@ -44,23 +43,17 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        'http://localhost:500/send-email',
-        formData
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_CONTACTS_ID,
+        formData,
+        import.meta.env.VITE_PUBLIC_KEY
       );
-      console.log('Email response:', response.data);
       setSubmitted(true);
     } catch (error) {
       console.error('Error sending email:', error);
       setSubmitError('Failed to submit the form. Please try again later.');
     }
-  };
-  
-
-  const validatePhoneNumber = (inputPhoneNumber) => {
-    // Regular expression pattern for 10-digit phone number
-    const phoneNumberPattern = /^\d{10}$/;
-    return phoneNumberPattern.test(inputPhoneNumber);
   };
 
   const inputStyle =
@@ -94,15 +87,12 @@ const ContactUs = () => {
                 </>
               }
             />
-            <ContactInfo
-              icon={faEnvelope}
-              text={<span>info@zeic.in</span>}
-            />
+            <ContactInfo icon={faEnvelope} text={<span>info@zeic.in</span>} />
           </div>
         </div>
 
         <div className='lg:w-1/2 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-6 md:mt-0'>
-          <form onSubmit={handleSubmit}> {/* className='max-w-xl' */}
+          <form onSubmit={handleSubmit}>
             <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
               <div>
                 <label
@@ -210,14 +200,12 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Dialog pop-up for submit message */}
       <Dialog
         open={submitted}
         onClose={() => setSubmitted(false)}
         className='fixed inset-0 z-50 overflow-y-auto'
       >
         <div className='fixed inset-0 z-0 bg-black opacity-50'></div>{' '}
-        {/* Overlay */}
         <div className='flex justify-center items-center min-h-screen'>
           <div className='bg-white border border-gray-300 rounded-lg p-8 max-w-md w-full z-10'>
             <Dialog.Title className='text-2xl font-bold text-red-500 mb-4'>

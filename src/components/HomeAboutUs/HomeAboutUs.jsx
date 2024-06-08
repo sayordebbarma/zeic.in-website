@@ -16,7 +16,7 @@ const HomeAboutUs = () => {
 
       <div className='flex flex-col justify-between lg:flex-row items-center md:m-4 lg:m-8'>
         <div
-          className='relative w-96 md:w-2/3 lg:w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
+          className='relative w-52 md:w-64 h-full rounded-tl-3xl rounded-br-3xl overflow-hidden'
           style={{ boxShadow: '10px 10px', padding: '0' }}
         >
           <img src={InnovatorImg} alt='The Innovator Img' />
@@ -26,26 +26,25 @@ const HomeAboutUs = () => {
             <h3 className='font-semibold md:font-bold mb-4 lg:text-lg'>
               The Innovator:
             </h3>
-            <p className='font-light'>
+            <p className='font-light text-base lg:text-md'>
               L Lanu Jamir, an innovator and entrepreneur from Chümoukedima,
               Nagaland, is the visionary founder of Zip Engineering and
               Innovation Centre. His journey, marked by resilience and
               steadfastness, reflects a commitment to fostering electronic,
-              mechanical, and electrical innovations.{' '}
+              mechanical, and electrical innovations.
             </p>
             <ul className='list-disc pl-6'>
               <li className='lg: mb-[-30px]'>
                 Recognized ELC Technician by Asosiasi Hidro Bandung
               </li>
               <li className='lg: mb-[-30px]'>
-                Recognized ELC Technician by ASEAN Hydropower Competence Centre
-                (HYCOM)
+                Recognized ELC Technician by ASEAN Hydropower Competence Centre (HYCOM)
               </li>
               <li className='lg: mb-[-30px]'>
                 Represented Meghalaya State Basin Development Authority
               </li>
               <li className='lg: mb-[-30px]'>
-              Represented Gram Vikas of India from Orrisa State, for the Hydro Empowerment Network from South and Southeast Asia in Indonesia
+              Represented Gram Vikas of India from Odisha State, for the Hydro Empowerment Network from South and Southeast Asia in Indonesia
               </li>
               <li className='lg: mb-[-30px]'>
                 Intellectual Property Right for ELC Design (2021)

@@ -31,7 +31,6 @@ const ProductCard = ({ productId }) => {
     setProductImg(nextIndex);
   };
 
-  //const product = products.find((product) => product.id === productId);
   const product = products[productId - 1];
 
   if (!product) {
@@ -50,7 +49,7 @@ const ProductCard = ({ productId }) => {
     'md:hidden group-hover:block absolute top-1/2 transform -translate-y-1/2 right-5 text-2xl rounded-full md:p-2 cursor-pointer z-10';
 
   return (
-    <div className={`mx-8 md:mx-20 ${containerStyle} justify-center items-center`}>
+    <div className={`mx-8 md:mx-8 lg:mx-20 my-6 ${containerStyle} justify-center items-center`}>
       {isEven && (
         <div
           className='max-w-[600px] h-[500px] w-full m-auto px-4 relative group'

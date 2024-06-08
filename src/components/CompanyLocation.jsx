@@ -2,8 +2,8 @@ import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '100%',
-  height: '100px'
+  width: '90%',
+  height: '100px',
 };
 
 const position = {
@@ -14,7 +14,7 @@ const position = {
 function CompanyLocation() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: import.meta.env.VITE_MAPS_API
+    googleMapsApiKey: import.meta.env.VITE_MAPS_API,
   });
 
   const [map, setMap] = React.useState(null);
@@ -25,9 +25,7 @@ function CompanyLocation() {
     const center = bounds.getCenter();
     const maxZoom = 18;
     const minZoom = 1;
-    const zoom = Math.min(
-      maxZoom,
-    );
+    const zoom = Math.min(maxZoom);
 
     map.setCenter(center);
     map.setZoom(zoom);
@@ -48,13 +46,13 @@ function CompanyLocation() {
       onUnmount={onUnmount}
       options={{
         streetViewControl: false,
-        // mapTypeControl: false,
-        // mapTypeId: 'satellite'
       }}
     >
       {/* Marker or other map components can be added here */}
     </GoogleMap>
-  ) : <></>;
+  ) : (
+    <></>
+  );
 }
 
 export default React.memo(CompanyLocation);

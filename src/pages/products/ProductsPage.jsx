@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
 import ProductCard from './ProductCard';
@@ -15,11 +15,26 @@ function ProductsPage() {
 
   const productRefs = [product1Ref, product2Ref, product3Ref, product4Ref];
 
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const buttonStyle = {
+    backgroundColor: isHovered ? '#991b1b' : '#e53935',
+    transition: 'background-color 0.3s ease',
+  };
+
   return (
     <>
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-800' />
-       <div className='mt-32 mb-8 flex flex-wrap flex-col'> {/* lg:mt-56 lg:mb-32 */}
+      <div className='mt-32 mb-8 flex flex-wrap flex-col'>
         <div ref={product1Ref}>
           <ProductCard productId={1} />
         </div>
@@ -36,7 +51,9 @@ function ProductsPage() {
       <Footer productRefs={productRefs} />
       <ScrollToTop
         smooth
-        className='bg-red-600 hover:bg-red-800'
+        style={buttonStyle}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         component={
           <FontAwesomeIcon icon={faArrowUp} style={{ color: '#ffffff' }} />
         }

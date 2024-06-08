@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
 import Navbar from '../../components/navbar/Navbar';
 import TeamSection from './teamSection';
@@ -11,6 +11,21 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import YtSection from './YtSection';
 
 function AboutUsPage() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const buttonStyle = {
+    backgroundColor: isHovered ? '#991b1b' : '#e53935',
+    transition: 'background-color 0.3s ease',
+  };
+
   return (
     <>
       <ContactHeader />
@@ -19,11 +34,19 @@ function AboutUsPage() {
         <ImageCarousel />
         <StatisticsSection />
         <YtSection />
-        <TeamSection/>
+        <TeamSection />
       </div>
 
       <Footer />
-      <ScrollToTop smooth className='bg-red-600 hover:bg-red-800' component={<FontAwesomeIcon icon={faArrowUp} style={{color: "#ffffff",}} />}/>
+      <ScrollToTop
+        smooth
+        style={buttonStyle}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        component={
+          <FontAwesomeIcon icon={faArrowUp} style={{ color: '#ffffff' }} />
+        }
+      />
     </>
   );
 }

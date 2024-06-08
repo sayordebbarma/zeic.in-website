@@ -13,10 +13,12 @@ const Timeline = () => {
       title:
         'Govt. of Nagaland- District Industries Centre- Certificate of Appreciation in the field of Manufacturing, Service, and Innovation',
     },
-    { year: 2013, 
-      title: 'Establishment of Zip Sound' },
-    { year: 2016, 
-      title: 'Recognized ELC Technician by ASEAN Hydropower Competence Centre (HYCOM)' },
+    { year: 2013, title: 'Establishment of Zip Sound' },
+    {
+      year: 2016,
+      title:
+        'Recognized ELC Technician by ASEAN Hydropower Competence Centre (HYCOM)',
+    },
     {
       year: 2019,
       title:
@@ -43,7 +45,7 @@ const Timeline = () => {
 
   useEffect(() => {
     const updateDisplayCount = () => {
-      if (window.innerWidth > 640) {
+      if (window.innerWidth > 1300) {
         setInitialDisplayCount(2);
       } else {
         setInitialDisplayCount(1);
@@ -75,22 +77,25 @@ const Timeline = () => {
   };
 
   return (
-    <div className='flex justify-center mx-auto md:w-full lg:w-9/12 min-h-[250px]'>
+    <div
+      className='flex justify-center mx-8 lg:mx-40 '
+      style={{ height: '200px' }}
+    >
       <button
-        className='md:ml-4 text-4xl relative max-h-[150px] min-w-[150px]' //text-replace
+        className='md:ml-4 text-4xl'
         onClick={handlePrev}
         disabled={startIndex === 0}
       >
         <FontAwesomeIcon icon={faCircleChevronLeft} />
       </button>
-      <ol className='border-1 dark:border-neutral-800 md:flex md:justify-center md:border-t md:gap-1 relative w-full'>
+      <ol className='border-1 dark:border-neutral-800 flex justify-center border-t md:gap-1 relative w-full'>
         {events.slice(startIndex, endIndex + 1).map((event, index) => (
           <li
             key={index}
             className='flex flex-col items-center mx-4 mb-4 md:mb-0 w-full md:w-auto'
             style={{
               flex: `1 0 ${(100 / initialDisplayCount).toFixed(2)}%`,
-              maxWidth: '300px', // Adjusted to maxWidth for responsiveness
+              maxWidth: '300px',
             }}
           >
             <div className='bg-gray-500 w-4 h-4 rounded-full flex items-center justify-center mb-2 absolute top-[-9px]'></div>
@@ -104,7 +109,7 @@ const Timeline = () => {
         ))}
       </ol>
       <button
-        className='md:ml-4 text-4xl relative max-h-[150px] min-w-[150px]' // text-replace
+        className='md:mr-4 text-4xl'
         onClick={handleNext}
         disabled={endIndex === events.length - 1}
       >

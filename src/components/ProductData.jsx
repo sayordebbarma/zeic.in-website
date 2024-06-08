@@ -43,25 +43,19 @@ export const products = [
       'Main Doors: Make a statement at the entrance with main doors that showcase the beauty of CNC carving and the resilience of epoxy resin.',
       'Customized Furniture: From tables to doors, our wooden-epoxy furniture adds sophistication and individuality to any space.',
     ],
-    specifications: [
-      'Fully Customizable',
-      'Versatile Applications'
-    ],
+    specifications: ['Fully Customizable', 'Versatile Applications'],
     images: [cnc1, cnc2, cnc3, cnc4, cnc5, cnc6, cnc7],
   },
   {
     id: 3,
     name: 'ELC',
     description:
-      'Digital and Analogue  Electronic Load Controller for Pico and Micro Hydro power. This innovative device stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation',
+      'Digital and Analogue Electronic Load Controller for Pico and Micro Hydro power. It stabilizes generator frequency and voltage, boasting a lightweight design for effortless handling and straightforward installation',
     types: [
       'Analogue ELC: Uses analog circuitry to regulate and control electrical loads.',
       'Digital ELC: Digital electronic load control utilizes digital technology, such as microcontrollers or digital signal processors (DSPs), to manage and regulate electrical loads.',
     ],
-    specifications: [
-      'Power Range: 2kW to 250kW',
-      'Weight: 1.5 kgs',
-    ],
+    specifications: ['Power Range: 2kW to 250kW', 'Weight: 1.5 kgs'],
     images: [elc1, elc2],
   },
   {
