@@ -23,21 +23,25 @@ import course4 from '../../assets/images/services/courses/Course4.png';
 
 const cardData = [
   {
+    id: 1,
     title: 'Sound System Rental',
     content: 'Range: Upto 1 Lakh W',
     images: [sound1, sound2, sound3, sound4],
   },
   {
+    id: 2,
     title: 'Stage Rental',
-    content: 'Range: Upto 16,000 sq. ft',
+    content: 'Range: Upto 1,600 sq. ft',
     images: [stage1, stage2, stage3, stage4],
   },
   {
+    id: 3,
     title: 'Generator Rental',
     content: 'Range: 5-100 kVA',
     images: [Generator1, Generator2, Generator3, Generator4],
   },
   {
+    id: 4,
     title: 'Audio Engineering Course',
     content:
       'Courses for Mixing, Equilization, Power Distribution, Amp class division and many more...',
@@ -45,7 +49,7 @@ const cardData = [
   },
 ];
 
-const ServicesCard = () => {
+const ServicesCard = ({ targetServiceId }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -65,6 +69,15 @@ const ServicesCard = () => {
 
     return () => clearInterval(interval);
   }, [currentImageIndex, currentCardIndex]);
+
+  useEffect(() => {
+    if (targetServiceId) {
+      const element = document.getElementById(targetServiceId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [targetServiceId]);
 
   const openDialog = (index) => {
     setIsDialogOpen(true);
@@ -141,6 +154,7 @@ const ServicesCard = () => {
       {cardData.map((card, index) => (
         <div
           key={index}
+          id={card.id}
           className='bg-gray-100 border border-gray-100 shadow-xl'
         >
           <div className='relative w-full h-80 overflow-hidden'>
@@ -393,3 +407,4 @@ const ServicesCard = () => {
 };
 
 export default ServicesCard;
+

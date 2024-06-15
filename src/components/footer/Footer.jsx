@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPhone,
-  faLocationDot,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import zeicLogo from '../../assets/images/logo/zeic_logo.png';
 import CompanyLocation from '../CompanyLocation';
 
-const Footer = ({ productRefs }) => {
+const Footer = ({ productRefs, serviceRefs }) => {
+  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
   const linkStyle =
     'transition-colors duration-300 text-gray-300 hover:cursor-pointer hover:text-red-500';
@@ -18,11 +15,12 @@ const Footer = ({ productRefs }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToProduct = (productId) => {
-    const productRef = productRefs[productId - 1];
-    if (productRef && productRef.current) {
-      productRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleProductClick = (productId) => {
+    navigate(`/products?productId=${productId}`);
+  };
+
+  const handleServiceClick = (serviceId) => {
+    navigate(`/services?serviceId=${serviceId}`);
   };
 
   return (
@@ -30,11 +28,9 @@ const Footer = ({ productRefs }) => {
       <div className='container px-6 pt-12 mx-auto'>
         <div className='grid grid-cols-2 gap-6 sm:gap-y-10 lg:grid-cols-6'>
           <div className='font-light col-span-2'>
-            <img
-              className='h-20 lg:mx-[-20px]'
-              src={zeicLogo}
-              alt='zeic logo'
-            />
+            <Link to='/' onClick={scrollToTop} className='flex items-center cursor-pointer'>
+              <img className='h-20 lg:mx-[-20px]' src={zeicLogo} alt='zeic logo' />
+            </Link>
             <h1 className='max-w-lg text-xl font-semibold tracking-tight xl:text-2xl'>
               Zip Engineering
               <br />&<br />
@@ -72,16 +68,44 @@ const Footer = ({ productRefs }) => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Products</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleProductClick(1);
+                }}
+              >
                 Zip Sound
               </Link>
-              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleProductClick(2);
+                }}
+              >
                 CNC Woodwork
               </Link>
-              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleProductClick(3);
+                }}
+              >
                 ELC
               </Link>
-              <Link to='/products' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/products'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleProductClick(4);
+                }}
+              >
                 Servo Stabilizer
               </Link>
             </div>
@@ -89,16 +113,44 @@ const Footer = ({ productRefs }) => {
           <div className='lg:mx-[-50px]'>
             <p className='font-semibold text-white'>Services</p>
             <div className='flex flex-col items-start mt-5 space-y-2'>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/services'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleServiceClick(1);
+                }}
+              >
                 Sound System Rental
               </Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/services'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleServiceClick(2); 
+                }}
+              >
                 Stage Rental
               </Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/services'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleServiceClick(3);
+                }}
+              >
                 Generator Rental
               </Link>
-              <Link to='/services' className={linkStyle} onClick={scrollToTop}>
+              <Link
+                to='/services'
+                className={linkStyle}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleServiceClick(4); 
+                }}
+              >
                 Courses
               </Link>
             </div>
@@ -106,7 +158,6 @@ const Footer = ({ productRefs }) => {
           <div className='lg:mx-[-50px] col-span-2 md:col-span-1'>
             <p className='font-semibold text-white'>Contact Us</p>
 
-            {/* Map location of the company */}
             <CompanyLocation />
 
             <div className='flex flex-col mt-3 font-light'>
@@ -116,14 +167,20 @@ const Footer = ({ productRefs }) => {
                 Nuiland Road, 4th Mile <br />
                 Chümoukedima, Nagaland : 797115
               </p>
-              <p className='flex mt-3 font-light items-center'>
+              <div className='flex mt-3 font-normal items-center'>
                 <FontAwesomeIcon className='mr-3' icon={faPhone} />
-                +91 7005521094 / +91 9402696843
-              </p>
-              <p className='flex mt-3 font-light items-center'>
-                <FontAwesomeIcon className='mr-3' icon={faEnvelope} />{' '}
+                  <a href='tel:+917005521094' >
+                    +91 7005521094
+                 </a>
+                  &nbsp;/
+                  <a href='tel:+919402696843' >
+                    +91 9402696843
+                  </a>
+              </div>
+              <a className='flex mt-3 font-normal items-center' href='mailto:info@zeic.in'>
+              <FontAwesomeIcon className='mr-3' icon={faEnvelope} /> 
                 info@zeic.in
-              </p>
+              </a>
             </div>
           </div>
         </div>
@@ -131,8 +188,7 @@ const Footer = ({ productRefs }) => {
         <hr className='my-2 mt-6 border-white h-1' />
         <div className='flex flex-col md:flex-row justify-between py-4 font-light text-start md:text-center md:text-sm md:p-4'>
           <p className='mb-2'>
-            &copy; {currentYear} Zip Engineering & Innovation Centre. All rights
-            reserved.
+            &copy; {currentYear} Zip Engineering & Innovation Centre. All rights reserved.
           </p>
           <p>
             Designed by{' '}

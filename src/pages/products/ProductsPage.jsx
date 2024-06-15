@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
 import ProductCard from './ProductCard';
@@ -15,6 +16,8 @@ function ProductsPage() {
 
   const productRefs = [product1Ref, product2Ref, product3Ref, product4Ref];
 
+  const location = useLocation();
+
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -29,6 +32,17 @@ function ProductsPage() {
     backgroundColor: isHovered ? '#991b1b' : '#e53935',
     transition: 'background-color 0.3s ease',
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const productId = params.get('productId');
+    if (productId) {
+      const productIndex = parseInt(productId, 10) - 1;
+      if (productRefs[productIndex] && productRefs[productIndex].current) {
+        productRefs[productIndex].current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location.search]);
 
   return (
     <>
