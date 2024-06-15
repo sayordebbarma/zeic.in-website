@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ContactHeader from '../../components/contactHeader/ContactHeader';
 import Navbar from '../../components/navbar/Navbar';
 import ServicesCard from './ServicesCard';
@@ -9,6 +10,9 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 const ServicesPage = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const targetServiceId = queryParams.get('serviceId');
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -28,7 +32,7 @@ const ServicesPage = () => {
       <ContactHeader />
       <Navbar navbarClassName='bg-gray-800' />
       <div className='mt-32 flex flex-wrap flex-col'>
-        <ServicesCard />
+        <ServicesCard targetServiceId={targetServiceId} />
       </div>
       <Footer />
       <ScrollToTop
